@@ -76,6 +76,31 @@ header .active {
     color: #fa4529;
 }
 
+/* Estilos para los botones de cambio de idioma */
+nav ul li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Estilos para las imágenes de las banderas */
+nav ul li button img {
+    width: 35px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Para hacer las imágenes redondas */ /* Sombra ligera */
+    transition: transform 0.3s ease; /* Transición suave */
+    padding: 5px 0 0 0;
+}
+
+/* Estilos cuando se hace hover sobre las imágenes */
+nav ul li button img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+nav ul li button:focus {
+    outline: none;
+}
+
 /* Estilos del contenido principal */
 .content {
     min-height: 400px;

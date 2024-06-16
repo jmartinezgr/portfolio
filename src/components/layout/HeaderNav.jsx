@@ -28,6 +28,16 @@ const HeaderNav = () => {
                         <li>
                             <NavLink to={`/${lang}/contacto`}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
                         </li>
+                        <li>
+                            <button>
+                                <img src="/español.png" alt="" />
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <img src="/english.png" alt="" />
+                            </button>
+                        </li>
                     </ul>
                 </nav>
         </header>
