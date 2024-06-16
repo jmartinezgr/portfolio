@@ -1,0 +1,117 @@
+.curriculum-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las secciones, opcional */
+}
+
+.curriculumSection {
+    flex: 1;
+    min-width: 300px; /* Ancho mínimo para que las secciones no se reduzcan demasiado en pantallas pequeñas */
+    margin: 50px 0 50px 50px;
+    max-height: 310px; /* Altura máxima de cada sección */
+    overflow-y: auto; /* Añade scroll si el contenido excede la altura máxima */
+    padding-left: 40px;
+    padding-bottom: 10px; 
+}
+
+/*Webkit(Android browser, Safari y otros webkit)*/
+.curriculumSection::-webkit-scrollbar {
+    width: 0;
+}
+
+.curriculumSection:hover::-webkit-scrollbar{
+    width: 5px;
+}
+
+.curriculumSection:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+
+.curriculumSection::-webkit-scrollbar-thumb {
+    background-color: #fa4529;
+    border-radius: 10px;
+}
+
+
+.curriculumSection::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.curriculumList {
+    border-inline-start: 2px solid #fa4529;
+    position: relative;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.curriculumItemList time {
+    color: rgb(98, 97, 97);
+}
+
+.curriculumItemList h3 {
+    color: black;
+}
+
+.curriculumItemList p {
+    margin: 0px 0 35px 0;
+    color: rgb(98, 97, 97);
+}
+
+.curriculumItemList a {
+    color: white;
+    background-color: #fa4529;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    transition: all 300ms;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.curriculumItemList svg {
+    margin-top: 3px;
+}
+
+.curriculumItemList a:hover {
+    background-color: #f5f5f5;
+    color: #fa4529;
+    border: 2px solid #fa4529;
+}
+
+.curriculumItemList {
+    padding-bottom: 40px;
+}
+
+.decorativeCircleList {
+    height: 15px;
+    width: 15px;
+    background-color: #fa4529;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    margin-top: 5px;
+}
+
+.curriculum-section-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0px;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 815px) {
+    .curriculumSection {
+        max-height: none; /* Elimina la altura máxima */
+        overflow-y: visible; /* Elimina el scroll */
+        margin: 20px 0; /* Ajusta el margen para pantallas pequeñas */
+    }
+
+    .curriculum-page {
+        display: block;
+    }
+}

@@ -1,0 +1,208 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: whitesmoke;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+#root {
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    height: 132px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 35px;
+}
+
+header .logo {
+    flex-grow: 2;
+    display: flex;
+}
+
+header .logo span {
+    display: block;
+    font-size: 100px;
+    font-weight: bolder;
+}
+
+header .logo h3 {
+    display: block;
+    flex-basis: 40px;
+    margin-left: 10px;
+    font-weight: 280;
+    text-transform: uppercase; 
+}
+
+/* Estilos de la barra de navegación */
+header nav {
+    flex-grow: 1;
+}
+
+header nav ul {
+    height: 132px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    transition: all 300ms;
+}
+
+header nav ul li a:hover,
+header .active {
+    color: #fa4529;
+}
+
+/* Estilos del contenido principal */
+.content {
+    min-height: 400px;
+}   
+
+/* Estilos del footer */
+footer {
+    min-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 35px;
+    padding-top: 45px;
+    border-top: 3px solid black;
+    background: #f5f5f5;
+    line-height: 20px;
+    color: #444;
+    background-color: whitesmoke;
+}
+
+.heading {
+    font-size: 40px;
+    font-weight: 500 !important;
+    color: black !important;
+    font-style: italic;
+    margin-bottom: 0px;
+}
+
+.page .heading {
+    font-size: 50px;
+    font-weight: bold !important;
+}
+
+/* Media Queries para estilos responsivos */
+@media (max-width: 1200px) {
+    #root {
+        width: 90%;
+    }
+
+    header .logo span {
+        font-size: 80px;
+    }
+
+    header nav ul li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    header .logo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    header .logo span {
+        font-size: 60px;
+    }
+
+    header .logo h3 {
+        font-size: 18px;
+    }
+
+    header nav ul {
+        justify-content: center;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    header nav ul li {
+        margin: 10px;
+        font-size: 15px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .heading {
+        font-size: 35px;
+    }
+
+    .page .heading {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #root {
+        width: 95%;
+    }
+
+    header .logo span {
+        font-size: 50px;
+    }
+
+    header .logo h3 {
+        font-size: 16px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .heading {
+        font-size: 30px;
+    }
+
+    .page .heading {
+        font-size: 35px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
