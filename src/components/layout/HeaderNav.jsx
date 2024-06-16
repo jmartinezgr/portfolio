@@ -5,12 +5,12 @@ const HeaderNav = () => {
     const lang = useLanguage();
     const navigate = useNavigate();
 
-    const handleOnClick = (l) => {
-        if (l !== lang) {
+    const handleOnClick = (language) => {
+        if (language !== lang) {
             const currentPath = window.location.pathname;
             console.log(currentPath)
 
-            const newPath = currentPath.replace(`/${lang}/`, `/${l}/`);
+            const newPath = currentPath.replace(`/${lang}/`, `/${language}/`);
             console.log(newPath)
             navigate(newPath)
         }
