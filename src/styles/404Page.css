@@ -6,15 +6,15 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-scolor);
     padding: 20px;
     margin: 0;
 }
 
 .not-found-page .heading {
     font-size: 3em;
-    color: #341AF9;
+    color: var(--text-pcolor);
 }
 
 .not-found-page h2 {
@@ -30,7 +30,7 @@
 .home-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #341AF9;
+    background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -38,7 +38,7 @@
 }
 
 .home-link:hover {
-    background-color: #f5f5f5;
-    color: #341AF9;
-    border: 2px solid #341AF9;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }

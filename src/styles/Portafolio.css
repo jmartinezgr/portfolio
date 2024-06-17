@@ -29,7 +29,7 @@
 }
 
 .work-item span{
-    color: gray;
+    color: var(--text-scolor);
     margin-top: 35px;
     display: block;
 }
@@ -37,25 +37,25 @@
 .work-item h2{
     display: block;
     font-size: 25px;
-    color: black;
+    color: var(--text-pcolor);
     margin-top: 5px;
     transition: all 0.3s;
     margin-bottom: 10px;
 }
 
 .work-item a{
-    color: black;
+    color: var(--text-pcolor);
     text-decoration: none;
     transition: all 0.3s;
 }
 
 .work-item a:hover{
-    color: #341AF9;
+    color: var(--primary-color);
 }
 
 .work-item h3{
     display: block;
-    color: #444;
+    color: var(--text-scolor);
     padding-top: 10px;
     margin-top: 0;
     border-top: 1px solid #ddd;

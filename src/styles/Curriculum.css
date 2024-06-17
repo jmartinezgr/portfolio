@@ -24,44 +24,44 @@
 }
 
 .curriculumSection:hover{
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px var(--box-shadow-color);
     border-radius: 10px;
 }
 
 
 .curriculumSection::-webkit-scrollbar-thumb {
-    background-color: #341AF9;
+    background-color: var(--primary-color);
     border-radius: 10px;
 }
 
 
 .curriculumSection::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--background-color);
 }
 
 .curriculumList {
-    border-inline-start: 2px solid #341AF9;
+    border-inline-start: 2px solid var(--primary-color);
     position: relative;
     list-style: none;
     padding-left: 20px;
 }
 
 .curriculumItemList time {
-    color: rgb(98, 97, 97);
+    color: var(--text-scolor);
 }
 
 .curriculumItemList h3 {
-    color: black;
+    color: var(--text-pcolor);
 }
 
 .curriculumItemList p {
     margin: 0px 0 35px 0;
-    color: rgb(98, 97, 97);
+    color: var(--text-scolor);
 }
 
 .curriculumItemList a {
     color: white;
-    background-color: #341AF9;
+    background-color: var(--primary-color);
     text-decoration: none;
     padding: 10px 25px;
     border-radius: 10px;
@@ -70,7 +70,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    border: 2px solid #341AF9;
+    border: 2px solid var(--primary-color);
 }
 
 .curriculumItemList svg {
@@ -78,8 +78,8 @@
 }
 
 .curriculumItemList a:hover {
-    background-color: #f5f5f5;
-    color: #341AF9;
+    background-color: var(--background-color);
+    color: var(--primary-color);
 }
 
 .curriculumItemList {
@@ -89,7 +89,7 @@
 .decorativeCircleList {
     height: 15px;
     width: 15px;
-    background-color: #341AF9;
+    background-color: var(--primary-color);
     border-radius: 50%;
     position: absolute;
     left: -8px;
