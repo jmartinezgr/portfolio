@@ -46,6 +46,10 @@
     padding-left: 20px;
 }
 
+.curriculum-section-header{
+    color: var(--text-pcolor);
+}
+
 .curriculumItemList time {
     color: var(--text-scolor);
 }

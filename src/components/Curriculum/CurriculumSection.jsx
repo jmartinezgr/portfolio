@@ -12,11 +12,7 @@ const CurriculumSection = ({sectionName}) => {
                     <h2>{data.title}</h2>
                 </div>
                 <ol className="curriculumList">
-                    {
-                        data.items.map((item, index) => (
-                            CurriculumItem({item, index})
-                        ))
-                    }
+                    {data.items.map((item, index) => (CurriculumItem({item, index})))}
                 </ol>
             </section>
     )
