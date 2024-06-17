@@ -15,17 +15,17 @@ input[type="text"], textarea {
 }
 
 input[type="submit"] {
-    background-color: #fa4529;
+    background-color: #341AF9;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+    border: 2px solid #341AF9;
 }
 
 input[type="submit"]:hover {
     background-color: #f5f5f5;
-    color: #fa4529;
-    border: 2px solid #fa4529;
+    color: #341AF9;
 }

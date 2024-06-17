@@ -6,7 +6,7 @@
 .work-item{
     flex-basis: 30%;
     flex-grow: 1;
-    margin: 30px;
+    margin: 0 30px 0 20px;
 }
 
 .work-item .mask{
@@ -50,7 +50,7 @@
 }
 
 .work-item a:hover{
-    color: #fa4529;
+    color: #341AF9;
 }
 
 .work-item h3{

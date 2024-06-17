@@ -30,7 +30,7 @@
 
 
 .curriculumSection::-webkit-scrollbar-thumb {
-    background-color: #fa4529;
+    background-color: #341AF9;
     border-radius: 10px;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .curriculumList {
-    border-inline-start: 2px solid #fa4529;
+    border-inline-start: 2px solid #341AF9;
     position: relative;
     list-style: none;
     padding-left: 20px;
@@ -61,7 +61,7 @@
 
 .curriculumItemList a {
     color: white;
-    background-color: #fa4529;
+    background-color: #341AF9;
     text-decoration: none;
     padding: 10px 25px;
     border-radius: 10px;
@@ -70,6 +70,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    border: 2px solid #341AF9;
 }
 
 .curriculumItemList svg {
@@ -78,8 +79,7 @@
 
 .curriculumItemList a:hover {
     background-color: #f5f5f5;
-    color: #fa4529;
-    border: 2px solid #fa4529;
+    color: #341AF9;
 }
 
 .curriculumItemList {
@@ -89,7 +89,7 @@
 .decorativeCircleList {
     height: 15px;
     width: 15px;
-    background-color: #fa4529;
+    background-color: #341AF9;
     border-radius: 50%;
     position: absolute;
     left: -8px;
