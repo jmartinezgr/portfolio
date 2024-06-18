@@ -13,6 +13,7 @@ input[type="text"], textarea {
     resize: vertical;
     transition: all 0.3s;
     background-color: var(--input-background-color); /* Modifica el color de fondo según tu esquema de colores */
+    color: var(--text-pcolor); /* Modifica el color del texto según tu esquema de colores */
 }
 
 /* Estilo para el borde al hacer clic */
