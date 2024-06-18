@@ -1,6 +1,7 @@
 // src/components/ToggleButton.js
 import React from 'react'
-import { FaSun, FaMoon } from 'react-icons/fa'
+import { MdSunny } from "react-icons/md";
+import { BsMoonStarsFill } from "react-icons/bs";
 import '../styles/ToggleButton.css'
 import PropTypes from 'prop-types'
 
@@ -14,7 +15,7 @@ const ToggleButton = ({ handleColor }) => {
 
     return (
         <button className="toggle-button" onClick={toggleMode}>
-        {isDarkMode ? <FaSun /> : <FaMoon />}
+        {isDarkMode ? <MdSunny size={"30px"} /> : <BsMoonStarsFill size={"30px"} />}
         </button>
     )
 }
@@ -22,4 +23,5 @@ const ToggleButton = ({ handleColor }) => {
 ToggleButton.propTypes = {
     handleColor: PropTypes.func.isRequired
 }
+
 export default ToggleButton
