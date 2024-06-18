@@ -39,7 +39,7 @@ header {
     justify-content: center;
     align-items: center;
     border-bottom: 2px solid var(--text-pcolor);
-    margin-bottom: 35px;
+    /*margin-bottom: 35px;*/
     color: var(--text-pcolor);
 }
 
@@ -141,11 +141,14 @@ footer {
     font-weight: 500 !important;
     color: var(--text-pcolor) !important;
     margin-bottom: 0px;
+    margin-top: 10;
 }
 
 .page .heading {
     font-size: 50px;
     font-weight: bold !important;
+    /*Ajustar el titulo pegado a la navBar*/
+    margin-top: 10px;
 }
 
 /* Media Queries para estilos responsivos 

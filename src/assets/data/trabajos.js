@@ -6,7 +6,8 @@ export const trabajos = {
             'url': 'https://jmartinezgr.github.io/',
             'tecnologias': ['HTML', 'CSS', 'JavaScript'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Portafolio personal para mostrar mis trabajos y habilidades en el desarrollo web.'
+            'desc': 'Portafolio personal para mostrar mis trabajos y habilidades en el desarrollo web.',
+            'github': 'https://sbetav.com/'            
         },
         {
             'id': '2',
@@ -14,7 +15,9 @@ export const trabajos = {
             'url': 'https://centromedico.com',
             'tecnologias': ['HTML', 'CSS', 'Bootstrap', 'Django'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Página web para un centro médico que permite a los usuarios agendar citas y ver los servicios que ofrece.'
+            'desc': 'Página web para un centro médico que permite a los usuarios agendar citas y ver los servicios que ofrece.',
+            'github': 'https://sbetav.com/'            
+            
         },
         {
             'id': '3',
@@ -22,7 +25,8 @@ export const trabajos = {
             'url': 'https://estadisticasWebPage.com',
             'tecnologias': ['HTML', 'CSS', 'JavaScript'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Página web que muestra estadísticas de un sitio web, como visitas, tiempo de permanencia, ubicación de los usuarios, etc.'
+            'desc': 'Página web que muestra estadísticas de un sitio web, como visitas, tiempo de permanencia, ubicación de los usuarios, etc.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '4',
@@ -30,7 +34,8 @@ export const trabajos = {
             'url': 'https://trelloClone.com',
             'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.'
+            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '5',
@@ -38,7 +43,8 @@ export const trabajos = {
             'url': 'https://trelloClone.com',
             'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.'
+            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '6',
@@ -46,7 +52,9 @@ export const trabajos = {
             'url': 'https://trelloClone.com',
             'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.'
+            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.',
+            'github': 'https://sbetav.com/'
+
         }
     ],
     "en": [
@@ -56,7 +64,8 @@ export const trabajos = {
             'url': 'https://jmartinezgr.github.io/',
             'tecnologias': ['HTML', 'CSS', 'JavaScript'],
             'categorias': 'Web Development',
-            'desc': 'Personal portfolio to showcase my work and skills in web development.'
+            'desc': 'Personal portfolio to showcase my work and skills in web development.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '2',
@@ -64,7 +73,8 @@ export const trabajos = {
             'url': 'https://centromedico.com',
             'tecnologias': ['HTML', 'CSS', 'Bootstrap', 'Django'],
             'categorias': 'Web Development',
-            'desc': 'Website for a medical center that allows users to schedule appointments and view the services offered.'
+            'desc': 'Website for a medical center that allows users to schedule appointments and view the services offered.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '3',
@@ -72,7 +82,8 @@ export const trabajos = {
             'url': 'https://estadisticasWebPage.com',
             'tecnologias': ['HTML', 'CSS', 'JavaScript'],
             'categorias': 'Web Development',
-            'desc': 'Website that displays statistics of a website, such as visits, time on site, user location, etc.'
+            'desc': 'Website that displays statistics of a website, such as visits, time on site, user location, etc.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '4',
@@ -80,7 +91,8 @@ export const trabajos = {
             'url': 'https://trelloClone.com',
             'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
             'categorias': 'Web Development',
-            'desc': 'Clone of the Trello application, allowing users to create boards and organize tasks.'
+            'desc': 'Clone of the Trello application, allowing users to create boards and organize tasks.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '5',
@@ -88,7 +100,8 @@ export const trabajos = {
             'url': 'https://trelloClone.com',
             'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
             'categorias': 'Web Development',
-            'desc': 'Clone of the Trello application, allowing users to create boards and organize tasks.'
+            'desc': 'Clone of the Trello application, allowing users to create boards and organize tasks.',
+            'github': 'https://sbetav.com/'
         },
         {
             'id': '6',
@@ -96,7 +109,8 @@ export const trabajos = {
             'url': 'https://trelloClone.com',
             'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
             'categorias': 'Web Development',
-            'desc': 'Clone of the Trello application, allowing users to create boards and organize tasks.'
+            'desc': 'Clone of the Trello application, allowing users to create boards and organize tasks.',
+            'github': 'https://sbetav.com/'
         }
     ]
 }

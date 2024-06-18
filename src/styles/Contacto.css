@@ -38,3 +38,8 @@ input[type="submit"]:hover {
     background-color: var(--background-color);
     color: var(--primary-color);
 }
+
+.p-button-primary{
+    background-color: var(--primary-color);
+    padding: 5px auto;
+}

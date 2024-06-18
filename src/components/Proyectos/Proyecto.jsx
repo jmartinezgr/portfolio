@@ -1,6 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import { trabajos } from '../../assets/data/trabajos';
 import { useEffect, useState } from "react";
+import { Button } from 'primereact/button';
 import '../../styles/Proyecto.css';
 
 const Proyecto = () => {
@@ -32,10 +33,27 @@ const Proyecto = () => {
             <div className="mask">
                 <img src={`/src/assets/images/${trabajo.id}.png`} alt={trabajo.nombre} />
             </div>
-            <h1 className="heading">Proyecto {trabajo.nombre} </h1>
+            <h1 className="heading">Proyecto {trabajo.nombre}</h1>
             <p>{trabajo.tecnologias && trabajo.tecnologias.join(', ')}</p>
             <p>{trabajo.desc}</p>
-            <a href={trabajo.url} target="_blank" rel="noopener noreferrer">Ir al proyecto</a>
+            <div className="buttons">
+                {trabajo.url && (
+                    <a href={trabajo.url} target="_blank" rel="noopener noreferrer">
+                    <Button label={params.lang === 'es' ? 'Ver Demo' : 'View Demo'} 
+                        icon="pi pi-external-link" 
+                        iconPos="right" 
+                        className="p-button-primary"
+                        raised/>
+                    </a>
+                )}
+                {trabajo.github && (
+                    <a href={trabajo.github} target="_blank" rel="noopener noreferrer">
+                        <Button icon="pi pi-github" 
+                            className="p-button-secondary" 
+                            raised/>
+                    </a>
+                )}
+            </div>
         </div>
     );
 };

@@ -63,6 +63,7 @@
     color: var(--text-scolor);
 }
 
+/*
 .curriculumItemList a {
     color: white;
     background-color: var(--primary-color);
@@ -84,10 +85,14 @@
 .curriculumItemList a:hover {
     background-color: var(--background-color);
     color: var(--primary-color);
-}
+}*/
 
 .curriculumItemList {
     padding-bottom: 40px;
+}
+
+.curriculumItemList .p-button-primary{
+    background-color: var(--primary-color);
 }
 
 .decorativeCircleList {
