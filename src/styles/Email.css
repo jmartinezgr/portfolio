@@ -1,0 +1,32 @@
+/* src/components/Email.css */
+.email {
+	position: fixed;
+	bottom: -10px;
+	right: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+  
+.email-text {
+	writing-mode: vertical-lr;
+	transform: rotate(360deg);
+	color: var(--text-pcolor);
+	margin: 10px 0;
+	font-size: 14px;
+	transition: color 0.3s ease;
+}
+  
+.email-text:hover {
+	color: var(--primary-color);
+}
+  
+.vertical-line {
+	width: 2px;
+	height: 100px;
+	background-color: var(--text-pcolor);
+	margin-bottom: 10px;
+}
+  
