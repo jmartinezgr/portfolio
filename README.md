@@ -1,8 +1,19 @@
-# React + Vite
+<h1 align="center">Astro Portfolio</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<a align="center" href="https://jmartinezgr-portfolio.vercel.app/" target="_blank">View Demo</a>
 
-Currently, two official plugins are available:
+### Built With
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [![React][React]][react-url]
+
+### Contact
+
+Juan José Martinez Grisales - juan.martinez.desarrolador@gmail.com
+Project Link: [https://github.com/jmartinezgr/portfolio](https://github.com/jmartinezgr/portfolio)
+
+### Acknowledgments
+
+- [React](https://react.dev/) - Used for interactive components
+- [React Lazy Load](https://www.npmjs.com/package/react-lazy-load) - Used for image loads.
+
+[react-url]: https://es.react.dev/
