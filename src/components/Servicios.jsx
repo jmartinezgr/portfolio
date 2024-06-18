@@ -1,44 +1,37 @@
-import { FiMonitor, FiCode, FiSettings, FiLayers, FiBookOpen, FiGitMerge } from 'react-icons/fi' // Importar iconos desde react-icons
-import '../styles/Servicios.css'
+import { useLanguage } from '../hooks/useLanguage';
+import { FiMonitor, FiCode, FiSettings, FiLayers, FiBookOpen, FiGitMerge, FiDatabase, FiCloud } from 'react-icons/fi'; 
+import '../styles/Servicios.css';
+import { servicios } from '../assets/data/servicios';
+
+const iconMap = {
+    FiMonitor: <FiMonitor size={36} />,
+    FiCode: <FiCode size={36} />,
+    FiSettings: <FiSettings size={36} />,
+    FiLayers: <FiLayers size={36} />,
+    FiBookOpen: <FiBookOpen size={36} />,
+    FiGitMerge: <FiGitMerge size={36} />,
+    FiDatabase: <FiDatabase size={36} />,
+    FiCloud: <FiCloud size={36} />
+};
 
 const Servicios = () => {
+    const lang = useLanguage();
+    const data = servicios[lang];
+
     return (
         <div className="page">
             <h1 className="heading">Servicios</h1>
             <section className="row">
-                <article className="service">
-                    <FiMonitor size={36} />
-                    <h2>Diseño Web</h2>
-                    <p>Diseño de sitios web atractivos y funcionales.</p>
-                </article>
-                <article className="service">
-                    <FiCode size={36} />
-                    <h2>Desarrollo Web</h2>
-                    <p>Creación de aplicaciones web completas utilizando tecnologías como Django, Node.js con Express, React y Angular.</p>
-                </article>
-                <article className="service">
-                    <FiSettings size={36} />
-                    <h2>Automatización</h2>
-                    <p>Implementación de procesos de automatización para mejorar la eficiencia en proyectos de software.</p>
-                </article>
-                <article className="service">
-                    <FiLayers size={36} />
-                    <h2>Estructuración de Proyectos</h2>
-                    <p>Organización y estructuración de proyectos de software según las mejores prácticas.</p>
-                </article>
-                <article className="service">
-                    <FiBookOpen size={36} />
-                    <h2>Consultoría Técnica</h2>
-                    <p>Asesoramiento técnico para optimizar el desarrollo y la arquitectura de aplicaciones web.</p>
-                </article>
-                <article className="service">
-                    <FiGitMerge size={36} />
-                    <h2>Metodologías Ágiles</h2>
-                    <p>Implementación de metodologías ágiles como Scrum para la gestión eficiente de proyectos.</p>
-                </article>
+                {data.map((service, index) => (
+                    <article className="service" key={index}>
+                        {iconMap[service.icon]}
+                        <h2>{service.title}</h2>
+                        <p>{service.description}</p>
+                    </article>
+                ))}
             </section>
         </div>
-    )
+    );
 }
 
 export default Servicios;
