@@ -2,6 +2,7 @@ import { trabajos } from '../../assets/data/trabajos';
 import { Link } from 'react-router-dom';
 import '../../styles/Portafolio.css';
 import PropTypes from 'prop-types';
+import { useLanguage } from '../../hooks/useLanguage';
 
 // Función para obtener elementos aleatorios de un array
 const getRandomElements = (array, numElements) => {
@@ -10,8 +11,11 @@ const getRandomElements = (array, numElements) => {
 }
 
 const ListadoProyectos = ({ limite = undefined }) => {
+
+    const lang = useLanguage()
+
     // Elegimos si mostramos todos los trabajos o solo los primeros
-    const filterData = trabajos["en"]
+    const filterData = trabajos[lang]
     const data = limite !== undefined ? getRandomElements(filterData , limite) : filterData
 
     return (
@@ -24,7 +28,7 @@ const ListadoProyectos = ({ limite = undefined }) => {
                                 <img src={"/src/assets/images/" + trabajo.id + ".png"} alt={trabajo.nombre} />
                             </div>
                             <span>{trabajo.categorias}</span>
-                            <h2><Link to={'/proyecto/' + trabajo.id}> {trabajo.nombre}</Link></h2>
+                            <h2><Link to={'/'+lang+'/proyecto/' + trabajo.id}> {trabajo.nombre}</Link></h2>
                             <h3>{trabajo.tecnologias ? trabajo.tecnologias.join(', ') : 'Tecnologías no disponibles'}</h3>
                         </article>
                     )

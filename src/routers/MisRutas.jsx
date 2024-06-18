@@ -1,18 +1,17 @@
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
-import Inicio from '../components/Inicio'
-import Portafolio from '../components/Portafolio'
-import Servicios from '../components/Servicios'
-import Curriculum from '../components/Curriculum'
-import Contacto from '../components/Contacto'
-import HeaderNav from '../components/layout/HeaderNav'
-import Footer from '../components/layout/Footer'
-import PageNotFound from '../components/PageNotFound'
-import Proyecto from '../components/Proyectos/Proyecto'
+import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import Inicio from '../components/Inicio';
+import Portafolio from '../components/Portafolio';
+import Servicios from '../components/Servicios';
+import Curriculum from '../components/Curriculum';
+import Contacto from '../components/Contacto';
+import HeaderNav from '../components/layout/HeaderNav';
+import Footer from '../components/layout/Footer';
+import PageNotFound from '../components/PageNotFound';
+import Proyecto from '../components/Proyectos/Proyecto';
 
 const MisRutas = () => {
-
     const activeStyle = (element) => {
-        return element.isActive ? 'active' : ""
+        return element.isActive ? 'active' : "";
     }
 
     return (
@@ -33,7 +32,10 @@ const MisRutas = () => {
                     <Route path="/:lang/curriculum" className={activeStyle} element={<Curriculum />} />
                     <Route path="/:lang/contacto" className={activeStyle} element={<Contacto />} />
                     <Route path="/:lang/proyecto/:id" className={activeStyle} element={<Proyecto />} />
-                    
+
+                    {/* Ruta específica para la página 404 por idioma */}
+                    <Route path="/:lang/404" element={<PageNotFound />} />
+
                     {/* Ruta para Página No Encontrada */}
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
@@ -42,7 +44,7 @@ const MisRutas = () => {
             {/* Footer */}
             <Footer />
         </BrowserRouter>
-    )
-}
+    );
+};
 
-export default MisRutas
+export default MisRutas;
