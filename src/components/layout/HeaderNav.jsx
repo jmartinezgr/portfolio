@@ -1,39 +1,48 @@
-import { NavLink, useNavigate } from "react-router-dom"
-import { useLanguage } from "../../hooks/useLanguage"
-import ToggleButton from '../ToogleButton'
+import { NavLink, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLanguage } from "../../hooks/useLanguage";
+import ToggleButton from '../ToogleButton';
 
 const HeaderNav = () => {
     const lang = useLanguage();
     const navigate = useNavigate();
 
+    const applyDarkMode = (isDarkMode) => {
+        if (isDarkMode) {
+            document.documentElement.style.setProperty('--background-color', '#111b22');
+            document.documentElement.style.setProperty('--text-pcolor', '#fcfdfd');
+            document.documentElement.style.setProperty('--text-scolor', '#ddd');
+            document.documentElement.style.setProperty('--primary-color', '#007aff');
+            document.documentElement.style.setProperty('--secondary-color', '#FFA500');
+        } else {
+            document.documentElement.style.setProperty('--background-color', '#f5f5f5');
+            document.documentElement.style.setProperty('--text-pcolor', '#000');
+            document.documentElement.style.setProperty('--text-scolor', '#333');
+            document.documentElement.style.setProperty('--primary-color', '#007aff');
+            document.documentElement.style.setProperty('--secondary-color', '#FFA500');
+        }
+    };
+
     const handleColor = () => {
-        var estilo = window.getComputedStyle(document.body)
-        var colorDeFondo = estilo.backgroundColor
-      
-          if (colorDeFondo === 'rgb(245, 245, 245)') {
-              document.documentElement.style.setProperty('--background-color', '#111b22')
-              document.documentElement.style.setProperty('--text-pcolor', '#fcfdfd')
-              document.documentElement.style.setProperty('--text-scolor', '#ddd')
-              document.documentElement.style.setProperty('--primary-color', '#007aff')
-              document.documentElement.style.setProperty('--secondary-color', '#FFA500')
-          } else {
-              document.documentElement.style.setProperty('--background-color', '#f5f5f5')
-              document.documentElement.style.setProperty('--text-pcolor', '#000')
-              document.documentElement.style.setProperty('--text-scolor', '#333')
-              document.documentElement.style.setProperty('--primary-color', '#007aff')
-              document.documentElement.style.setProperty('--secondary-color', '#FFA500')
-          }
-      }
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        localStorage.setItem('darkMode', !isDarkMode);
+        applyDarkMode(!isDarkMode);
+    };
 
     const handleOnClick = () => {
         let language;
-        if (lang === 'es') language = 'en'
-        else language = 'es'
+        if (lang === 'es') language = 'en';
+        else language = 'es';
         
         const currentPath = window.location.pathname;
         const newPath = currentPath.replace(`/${lang}/`, `/${language}/`);
-        navigate(newPath)
-    }
+        navigate(newPath);
+    };
+
+    useEffect(() => {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        applyDarkMode(isDarkMode);
+    }, []);
 
     const src = lang === 'en' ? '/español.png' : '/english.png';
 
@@ -61,17 +70,17 @@ const HeaderNav = () => {
                         <NavLink to={`/${lang}/contacto`}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
                     </li>
                     <li>
-                        <button onClick={() => handleOnClick()}>
+                        <button onClick={handleOnClick}>
                             <img src={src} alt="Español" />
                         </button>
                     </li>
                     <li>
-                        <ToggleButton handleColor={handleColor}  />
+                        <ToggleButton handleColor={handleColor} />
                     </li>
                 </ul>
             </nav>
         </header>
-    )
-}
+    );
+};
 
-export default HeaderNav
+export default HeaderNav;
