@@ -2,6 +2,7 @@
 import MisRutas from './routers/MisRutas'
 import SocialIcons from './components/SocialIcons';
 import Email from './components/Email';
+import Alerta from './components/Alerta';
 import { useEffect } from 'react';
 import 'primereact/resources/themes/saga-blue/theme.css'; 
 import 'primereact/resources/primereact.min.css';
@@ -12,7 +13,6 @@ function App() {
 
     useEffect(() => {
 		// Añadir el idioma al localStorage
-		console.log(localStorage.getItem('lang'));
         if(localStorage.getItem('lang') === null) {
             localStorage.setItem('lang', 'es');
         }
@@ -20,11 +20,11 @@ function App() {
 		if(localStorage.getItem('darkMode') === null) {
 			localStorage.setItem('darkMode', false);
 		}
-		console.log(localStorage.getItem('lang'));
     }, []);
 
 	return (
 		<>
+			<Alerta/>
 			<SocialIcons />
 			<MisRutas />
 			<Email />

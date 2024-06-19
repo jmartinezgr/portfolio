@@ -24,7 +24,6 @@ const MisRutas = () => {
         <BrowserRouter>
             {/* Header y Navegación */}
             <HeaderNav />
-
             {/* Contenido Principal */}
             <section className="content">
                 <Routes>
