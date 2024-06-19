@@ -7,6 +7,11 @@ const HeaderNav = () => {
     const lang = useLanguage();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        applyDarkMode(isDarkMode);
+    }, []);
+
     const applyDarkMode = (isDarkMode) => {
         if (isDarkMode) {
             document.documentElement.style.setProperty('--background-color', '#111b22');
@@ -33,16 +38,15 @@ const HeaderNav = () => {
         let language;
         if (lang === 'es') language = 'en';
         else language = 'es';
+
+        // Guardar el idioma en el localStorage
+        localStorage.setItem('lang', language);
         
         const currentPath = window.location.pathname;
         const newPath = currentPath.replace(`/${lang}/`, `/${language}/`);
         navigate(newPath);
     };
 
-    useEffect(() => {
-        const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        applyDarkMode(isDarkMode);
-    }, []);
 
     const src = lang === 'en' ? '/español.png' : '/english.png';
 

@@ -9,29 +9,63 @@ import Footer from '../components/layout/Footer';
 import PageNotFound from '../components/PageNotFound';
 import Proyecto from '../components/Proyectos/Proyecto';
 
-const MisRutas = () => {
-    const activeStyle = (element) => {
-        return element.isActive ? 'active' : "";
-    }
+const MisRutas = () => {    
+    // Función para aplicar el estilo activo
+    const activeStyle = (match) => {
+        return match ? 'active' : '';
+    };
+
+    // Función para obtener el idioma del localStorage
+    const lang = () => {
+        return localStorage.getItem('lang') || 'es';
+    };
 
     return (
         <BrowserRouter>
-            {/* Header y Navegacion */}
+            {/* Header y Navegación */}
             <HeaderNav />
 
             {/* Contenido Principal */}
             <section className="content">
                 <Routes>
                     {/* Redirección a la versión predeterminada del idioma */}
-                    <Route path="/" element={<Navigate to="/es/inicio" />} end />
-                    
+                    <Route
+                        path="/"
+                        element={<Navigate to={`/${lang()}/inicio`} />}
+                        end
+                    />
+
                     {/* Rutas con parámetro de idioma */}
-                    <Route path="/:lang/inicio" className={activeStyle} element={<Inicio />} />
-                    <Route path="/:lang/portafolio" className={activeStyle} element={<Portafolio />} />
-                    <Route path="/:lang/servicios" className={activeStyle} element={<Servicios />} />
-                    <Route path="/:lang/curriculum" className={activeStyle} element={<Curriculum />} />
-                    <Route path="/:lang/contacto" className={activeStyle} element={<Contacto />} />
-                    <Route path="/:lang/proyecto/:id" className={activeStyle} element={<Proyecto />} />
+                    <Route
+                        path="/:lang/inicio"
+                        element={<Inicio />}
+                        className={activeStyle}
+                    />
+                    <Route
+                        path="/:lang/portafolio"
+                        element={<Portafolio />}
+                        className={activeStyle}
+                    />
+                    <Route
+                        path="/:lang/servicios"
+                        element={<Servicios />}
+                        className={activeStyle}
+                    />
+                    <Route
+                        path="/:lang/curriculum"
+                        element={<Curriculum />}
+                        className={activeStyle}
+                    />
+                    <Route
+                        path="/:lang/contacto"
+                        element={<Contacto />}
+                        className={activeStyle}
+                    />
+                    <Route
+                        path="/:lang/proyecto/:id"
+                        element={<Proyecto />}
+                        className={activeStyle}
+                    />
 
                     {/* Ruta específica para la página 404 por idioma */}
                     <Route path="/:lang/404" element={<PageNotFound />} />
