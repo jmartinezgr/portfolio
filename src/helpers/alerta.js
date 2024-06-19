@@ -1,12 +1,14 @@
-export const alerta = (mensaje,type) => {
+export const alerta = (mensaje, type) => {
     document.querySelector('.toast').classList.add('active')
     document.querySelector('.progress').classList.add('active')
     document.querySelector('.text-2').textContent = mensaje
 
     if(type === 'error'){
-        document.querySelector('.toast').style.borderleft = '6px solid #cb3234;'
+        document.documentElement.style.setProperty('--color', "red");
+        document.querySelector('.text-1').innerHTML = 'Error'
     }else{
-        document.querySelector('.toast').style.borderleft = '#f44336'
+        document.documentElement.style.setProperty('--color', "var(--primary-color)");
+        document.querySelector('.text-1').innerHTML = 'Success'
     }
 
     setTimeout(() => {
@@ -15,6 +17,4 @@ export const alerta = (mensaje,type) => {
             document.querySelector('.progress').classList.remove('active')
         }, 300)
     }, 5000)
-
-
 }

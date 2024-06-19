@@ -5,8 +5,12 @@ import { alerta } from '../helpers/alerta';
 const Email = () => {
 
 	const handleClick = () => {
-		navigator.clipboard.writeText('josemargri3@gmail.com')
-		alerta('Email copied to clipboard','error')
+		navigator.clipboard.writeText('josemargri3@gmail.com').then(
+			() => alerta('Email copied to clipboard','success')
+		).catch(
+			() => alerta('Email not copied to clipboard','error')
+		)
+
 	}
 
 	return (
@@ -14,7 +18,7 @@ const Email = () => {
 			<p className="email-text" onClick={handleClick}>josemargri3@gmail.com</p>
 			<div className="vertical-line"></div>
 		</div>
-	);
-};
+	)
+}
 
 export default Email;

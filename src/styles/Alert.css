@@ -1,5 +1,5 @@
-body{
-    overflow-x: hidden;
+:root{
+    --color: var(--primary-color);
 }
 
 .toast{
@@ -10,11 +10,13 @@ body{
     position: absolute;
     top: 25px;
     right: 30px;
-    border-left: 6px solid var(--primary-color);
+    border-left: 6px solid var(--color);
     overflow: hidden;
     transform: translate(calc(100% + 30px)); 
     transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.35);
 }
+
+
 
 /* Active Toast */
 .toast.active{
@@ -47,7 +49,7 @@ body{
     height: 25px;
     width: 25px;
     padding: 5px;
-    background-color: var(--primary-color);
+    background-color: var(--color);
     color: #f5f5f5;
     font-size: 10px;
     border-radius: 50%;
@@ -94,6 +96,6 @@ body{
     right: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--primary-color);    
+    background-color: var(--color);    
 }
 
