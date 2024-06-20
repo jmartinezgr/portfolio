@@ -7,6 +7,7 @@ import Queue from 'queue-fifo';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 	
 function App() {
 	const queueRef = useRef(new Queue());
@@ -40,6 +41,8 @@ function App() {
 			<SocialIcons />
 			<MisRutas />
 			<Email alerta={showAlert} />
+			{/* Elemento para medir el rendimiento en vercel*/}
+			<SpeedInsights />
 		</>
 	);
 }
