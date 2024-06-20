@@ -1,16 +1,22 @@
-// src/components/Email.js
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Email.css';
-import { alerta } from '../helpers/alerta';
 
-const Email = () => {
+const Email = ({ alerta }) => {
+	const [lang, setLang] = useState('es');
+
+	useEffect(() => {
+		const path = window.location.pathname;
+		const language = path.split('/')[1];
+		setLang(language);
+	}, []);
 
 	const handleClick = () => {
 		navigator.clipboard.writeText('josemargri3@gmail.com').then(
-			() => alerta('Email copied to clipboard','success')
+			() => alerta((lang ==='en' ? 'Email copied to clipboard': 'Correo copiado al portapapeles'), 'success')
 		).catch(
-			() => alerta('Email not copied to clipboard','error')
-		)
-
+			() => alerta((lang==='en' ? 'Email not copied to clipboard': 'Ocurrion un error copiando el correo'), 'error')
+		);
 	}
 
 	return (
@@ -19,6 +25,10 @@ const Email = () => {
 			<div className="vertical-line"></div>
 		</div>
 	)
+}
+
+Email.propTypes = {
+	alerta: PropTypes.func.isRequired
 }
 
 export default Email;

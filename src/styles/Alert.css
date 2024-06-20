@@ -16,17 +16,14 @@
     transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.35);
 }
 
-
-
 /* Active Toast */
 .toast.active{
     transform: translateX(0);
 }
 
 .progress.active:before{
-    animation: progress 5s linear forwards;
+    animation: progress 2s linear forwards;
 } 
-
 
 @keyframes progress {
     100%{
@@ -97,5 +94,11 @@
     height: 100%;
     width: 100%;
     background-color: var(--color);    
+}
+
+.cancel{
+    color: var(--color);
+    height: 30px;
+    width: 30px;
 }
 
