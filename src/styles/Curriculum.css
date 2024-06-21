@@ -63,16 +63,23 @@
 
 #ts{
     width: 120px;
+    height: 83px;
 }
 
 #html{
-    height: 77px;
+    height: 75px;
 }
 
 #astro{
+    height: 80px;
+    width: 80px;
     background-color: white;
     padding: 10px;
     border-radius: 50%;
+}
+
+#css{
+    width: 95px;
 }
 
 /* Estilos de la linea del tiempo */

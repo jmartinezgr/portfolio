@@ -33,11 +33,11 @@ const Curriculum = () => {
                     <div className="logos-slide">
                         { 
                             sliderItems.map((item, index) => {
-                               
                                 if(item === 'TypeScript.png') return <img key={index} src={"/sliders/"+item} alt={"/"+item} id='ts'/>
                                 if(item === 'astro.png') return <img key={index} src={"/sliders/"+item} alt={"/"+item} id='astro'/>
                                 if(item === 'html.png') return <img key={index} src={"/sliders/"+item} alt={"/"+item} id='html'/>
-                               
+                                if(item === 'css.png') return <img key={index} src={"/sliders/"+item} alt={"/"+item} id='css'/>
+
                                 return <img key={index} src={"/sliders/"+item} alt={"/"+item}/>
                             })
                         }
