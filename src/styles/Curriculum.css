@@ -1,17 +1,17 @@
 .curriculum-page {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espacio entre las secciones, opcional */
+    gap: 30px; /* Espacio entre las secciones, opcional */
+    margin-top: -20px ;
 }
 
 .curriculumSection {
     flex: 1;
     min-width: 300px; /* Ancho mínimo para que las secciones no se reduzcan demasiado en pantallas pequeñas */
-    margin: 50px 0 50px 50px;
-    max-height: 310px; /* Altura máxima de cada sección */
+    margin: 50px 0 10px 0px;
+    max-height: 400px; /* Altura máxima de cada sección */
     overflow-y: auto; /* Añade scroll si el contenido excede la altura máxima */
-    padding-left: 40px;
-    padding-bottom: 10px; 
+    padding: 10px 50px 0px 40px;
 }
 
 /*Webkit(Android browser, Safari y otros webkit)*/
@@ -25,18 +25,24 @@
 
 .curriculumSection:hover{
     box-shadow: 0px 0px 10px var(--box-shadow-color);
+    /*
+    .curriculumSection:hover{
+    box-shadow: 0px 0px 10px var(--box-shadow-color);
+    border-radius: 10px;
+    }
+    */
     border-radius: 10px;
 }
 
 
 .curriculumSection::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
+    background-color:  var(--primary-color);
     border-radius: 10px;
 }
 
 
 .curriculumSection::-webkit-scrollbar-track {
-    background: var(--background-color);
+    background: transparent;
 }
 
 .curriculumList {
@@ -62,30 +68,6 @@
     margin: 0px 0 35px 0;
     color: var(--text-scolor);
 }
-
-/*
-.curriculumItemList a {
-    color: white;
-    background-color: var(--primary-color);
-    text-decoration: none;
-    padding: 10px 25px;
-    border-radius: 10px;
-    transition: all 300ms;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    border: 2px solid var(--primary-color);
-}
-
-.curriculumItemList svg {
-    margin-top: 3px;
-}
-
-.curriculumItemList a:hover {
-    background-color: var(--background-color);
-    color: var(--primary-color);
-}*/
 
 .curriculumItemList {
     padding-bottom: 40px;
