@@ -84,58 +84,22 @@
 
 /* Estilos de la linea del tiempo */
 
-.curriculum-page {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; /* Espacio entre las secciones, opcional */
-    margin-top: -20px ;
-}
-
-.curriculumSection {
-    flex: 1;
-    min-width: 300px; /* Ancho mínimo para que las secciones no se reduzcan demasiado en pantallas pequeñas */
-    margin: 50px 0 10px 0px;
-    max-height: 400px; /* Altura máxima de cada sección */
-    overflow-y: auto; /* Añade scroll si el contenido excede la altura máxima */
-    padding: 10px 50px 0px 40px;
-}
-
-/*Webkit(Android browser, Safari y otros webkit)*/
-.curriculumSection::-webkit-scrollbar {
-    width: 0;
-}
-
-.curriculumSection:hover::-webkit-scrollbar{
-    width: 5px;
-}
-
-.curriculumSection:hover{
-    box-shadow: 0px 0px 10px var(--box-shadow-color);
+.curriculum-page{
     /*
-    .curriculumSection:hover{
-    box-shadow: 0px 0px 10px var(--box-shadow-color);
-    border-radius: 10px;
-    }
-    */
-    border-radius: 10px;
-}
-
-
-.curriculumSection::-webkit-scrollbar-thumb {
-    background-color:  var(--primary-color);
-    border-radius: 10px;
-}
-
-
-.curriculumSection::-webkit-scrollbar-track {
-    background: transparent;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+*/
+    padding-left: 15px ;
+    max-width: 900px;
 }
 
 .curriculumList {
-    border-inline-start: 2px solid var(--primary-color);
+    border-inline-start: 4px solid var(--primary-color);
     position: relative;
     list-style: none;
-    padding-left: 20px;
+    padding-left: 50px;
 }
 
 .curriculum-section-header{
@@ -164,13 +128,13 @@
 }
 
 .decorativeCircleList {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     background-color: var(--primary-color);
     border-radius: 50%;
     position: absolute;
-    left: -8px;
-    margin-top: 5px;
+    left: -12px;
+    margin-top: 0px;
 }
 
 .curriculum-section-header{
@@ -191,4 +155,39 @@
     .curriculum-page {
         display: block;
     }
+}
+.title{
+    color: var(--text-scolor);
+    font-weight: 500;
+    line-height: 2;
+}
+
+.me{
+    color: var(--text-pcolor);
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.me strong{
+    color: var(--primary-color);
+}
+
+.page>section{
+    margin: 50px 0;
+}
+
+.page section>h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-pcolor);
+}
+
+.page section>p{
+    font-weight: 450;
+    font-size: 20px;
+}
+.curriculum-section-header  h2{
+    margin-left: -10px;
 }

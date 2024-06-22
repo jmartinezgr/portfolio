@@ -25,7 +25,7 @@ const ListadoProyectos = ({ limite = undefined }) => {
                     return (
                         <article key={trabajo.id} className="work-item">
                             <div className="mask">
-                                <img src={"/src/assets/images/" + trabajo.id + ".png"} alt={trabajo.nombre} />
+                                <img src={`/images/${trabajo.id}.png`} alt={trabajo.nombre} />
                             </div>
                             <span>{trabajo.categorias}</span>
                             <h2><Link to={'/'+lang+'/proyecto/' + trabajo.id}> {trabajo.nombre}</Link></h2>

@@ -64,11 +64,13 @@ const HeaderNav = () => {
                     <li>
                         <NavLink to={`/${lang}/portafolio`}>{lang === 'es' ? 'Portafolio' : 'Portfolio'}</NavLink>
                     </li>
+                    {/*
                     <li>
                         <NavLink to={`/${lang}/servicios`}>{lang === 'es' ? 'Servicios' : 'Services'}</NavLink>
                     </li>
+                    */}
                     <li>
-                        <NavLink to={`/${lang}/curriculum`}>{lang === 'es' ? 'Curriculum' : 'Resume'}</NavLink>
+                        <NavLink to={`/${lang}/curriculum`}>{lang === 'es' ? 'Sobre mi' : 'Aboute me'}</NavLink>
                     </li>
                     <li>
                         <NavLink to={`/${lang}/contacto`}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>

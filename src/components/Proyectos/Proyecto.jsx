@@ -31,7 +31,7 @@ const Proyecto = () => {
     return (
         <div className="page page-work">
             <div className="mask">
-                <img src={`/src/assets/images/${trabajo.id}.png`} alt={trabajo.nombre} />
+                <img src={`/images/${trabajo.id}.png`} alt={trabajo.nombre} />
             </div>
             <h1 className="heading">Proyecto {trabajo.nombre}</h1>
             <p>{trabajo.tecnologias && trabajo.tecnologias.join(', ')}</p>
