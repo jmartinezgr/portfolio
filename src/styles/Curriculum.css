@@ -35,9 +35,10 @@
     margin-top: 20px;
 }
 
+/*
 .logos:hover .logos-slide{
     animation-play-state: paused;
-}
+}*/
 
 .logos:before,
 .logos:after{

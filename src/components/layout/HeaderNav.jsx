@@ -70,7 +70,7 @@ const HeaderNav = () => {
                     </li>
                     */}
                     <li>
-                        <NavLink to={`/${lang}/curriculum`}>{lang === 'es' ? 'Sobre mi' : 'Aboute me'}</NavLink>
+                        <NavLink to={`/${lang}/curriculum`}>{lang === 'es' ? 'Sobre mi' : 'About me'}</NavLink>
                     </li>
                     <li>
                         <NavLink to={`/${lang}/contacto`}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
