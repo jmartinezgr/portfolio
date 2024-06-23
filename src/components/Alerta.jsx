@@ -31,7 +31,7 @@ const Alerta = ({ mensaje, tipo, onClose }) => {
 		// Quitar las clases de entrada y añadir las clases de salida
 		const timer = setTimeout(() => {
 			toastElement.classList.remove('active');
-			setTimeout(() => progressElement.classList.remove('active'), 300);
+			setTimeout(() => progressElement.classList.remove('active'), 500);
 
 			// Esperar a que la animación de salida termine antes de llamar a onClose
 			setTimeout(onClose, 300);
@@ -46,7 +46,7 @@ const Alerta = ({ mensaje, tipo, onClose }) => {
 		const progressElement = document.querySelector('.progress');
 
 		toastElement.classList.remove('active');
-		progressElement.classList.remove('active');
+		setTimeout(() => progressElement.classList.remove('active'), 500);
 
 		setTimeout(onClose, 300);
 	};
