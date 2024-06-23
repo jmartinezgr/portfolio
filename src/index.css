@@ -87,6 +87,7 @@ header nav ul li a {
     color: var(--text-pcolor);
     text-decoration: none;
     transition: all 300ms;
+    white-space: nowrap;
 }
 
 header nav ul li a:hover,
