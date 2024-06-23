@@ -1,7 +1,6 @@
 export const experiencia = {
     "es":{
         "title" : "Sobre mi",
-
         "firstP": "Soy un <strong>estudiante de ingeniería de sistemas</strong> y apasionado por crear <strong>soluciones web atractivas y funcionales</strong>. Estoy cómodo trabajando a la <strong>vanguardia de la tecnología</strong> y siempre estoy buscando aprender <strong>nuevas herramientas</strong> y mejorar mis habilidades.",
         "Cursos":{
             "title":"Cursos y diplomados",
