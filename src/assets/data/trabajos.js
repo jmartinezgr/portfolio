@@ -26,16 +26,16 @@ export const trabajos = {
             'tecnologias': ['HTML', 'CSS', 'JavaScript', 'Python', 'Django'],
             'categorias': 'Desarrollo Web',
             'desc': 'Página web que muestra estadísticas de un sitio web, como visitas, tiempo de permanencia, ubicación de los usuarios, etc.',
-            'github': 'https://sbetav.com/'
+            'github': 'https://github.com/jmartinezgr/EstadisticasWebPage'
         },
         {
             'id': '4',
-            'nombre': 'Trello Clone',
-            'url': 'https://trelloClone.com',
-            'tecnologias': ['HTML', 'React', 'NodeJs', 'MongoDB'],
+            'nombre': 'Proyecto CineLocal',
+            'url': 'https://cinelocal.pythonanywhere.com/peliculas/',
+            'tecnologias': ['HTML', 'CSS', 'JavaScript', 'Python', 'Django'],
             'categorias': 'Desarrollo Web',
-            'desc': 'Clon de la aplicación Trello, que permite a los usuarios crear tableros y organizar tareas.',
-            'github': 'https://sbetav.com/'
+            'desc': 'Aplicacion para gestionar la cartelera de un cine pequeño.',
+            'github': 'https://github.com/jmartinezgr/ProyectoCine'
         },
         {
             'id': '5',
