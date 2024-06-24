@@ -22,8 +22,8 @@ export const trabajos = {
         {
             'id': '3',
             'nombre': 'Estadísticas WebPage',
-            'url': 'https://estadisticasWebPage.com',
-            'tecnologias': ['HTML', 'CSS', 'JavaScript'],
+            'url': 'https://easyestadistica.pythonanywhere.com/',
+            'tecnologias': ['HTML', 'CSS', 'JavaScript', 'Python', 'Django'],
             'categorias': 'Desarrollo Web',
             'desc': 'Página web que muestra estadísticas de un sitio web, como visitas, tiempo de permanencia, ubicación de los usuarios, etc.',
             'github': 'https://sbetav.com/'
