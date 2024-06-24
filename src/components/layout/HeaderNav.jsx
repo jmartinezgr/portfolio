@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLanguage } from "../../hooks/useLanguage";
 import ToggleButton from '../ToogleButton';
+import { flushSync } from "react-dom";
 
 const HeaderNav = () => {
     const lang = useLanguage();
@@ -47,8 +48,20 @@ const HeaderNav = () => {
         navigate(newPath);
     };
 
-
     const src = lang === 'en' ? '/español.png' : '/english.png';
+
+    const click = (name) => {
+        if(!document.startViewTransition) {
+            navigate('/'+lang+'/' + name)
+            console.log('navegando')
+        }else{
+            document.startViewTransition(()=>{
+                flushSync(()=>{
+                    navigate('/'+lang+'/' + name)   
+                })
+            }) 
+        }
+    }
 
     return (
         <header>
@@ -59,21 +72,16 @@ const HeaderNav = () => {
             <nav>
                 <ul>
                     <li>
-                        <NavLink to={`/${lang}/inicio`}>{lang === 'es' ? 'Inicio' : 'Home'}</NavLink>
+                        <NavLink to={`/${lang}/inicio`} onClick={() => click("inicio")}>{lang === 'es' ? 'Inicio' : 'Home'}</NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/${lang}/portafolio`}>{lang === 'es' ? 'Portafolio' : 'Portfolio'}</NavLink>
-                    </li>
-                    {/*
-                    <li>
-                        <NavLink to={`/${lang}/servicios`}>{lang === 'es' ? 'Servicios' : 'Services'}</NavLink>
-                    </li>
-                    */}
-                    <li>
-                        <NavLink to={`/${lang}/curriculum`}>{lang === 'es' ? 'Sobre mi' : 'About me'}</NavLink>
+                        <NavLink to={`/${lang}/portafolio`} onClick={() => click("portafolio")}>{lang === 'es' ? 'Portafolio' : 'Portfolio'}</NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/${lang}/contacto`}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
+                        <NavLink to={`/${lang}/sobre-mi`} onClick={() =>click("sobre-mi")}>{lang === 'es' ? 'Sobre mi' : 'About me'}</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={`/${lang}/contacto`} onClick={() =>click("contacto")}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
                     </li>
                     <li>
                         <button onClick={handleOnClick}>

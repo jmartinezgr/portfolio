@@ -51,7 +51,7 @@ const MisRutas = () => {
                         className={activeStyle}
                     />
                     <Route
-                        path="/:lang/curriculum"
+                        path="/:lang/sobre-mi"
                         element={<Curriculum />}
                         className={activeStyle}
                     />
