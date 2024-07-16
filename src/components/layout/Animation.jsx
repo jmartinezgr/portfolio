@@ -3,7 +3,7 @@ import Typewriter from './Typewriter'
 import '../../styles/Loader.css'
 import PropTypes from 'prop-types'
 
-const Animation = ({ setAnimation }) => {
+const Animation = ({ setAnimation, setAnimationDisplayed }) => {
     const [animated, setAnimated] = useState(false);
     return (
         <div id="loading-animation"
@@ -32,6 +32,7 @@ const Animation = ({ setAnimation }) => {
                         writeSpeed={0.05}
                         eraseSpeed={0.03}
                         pauseBetween={0.5}
+                        setAnimationDisplayed={setAnimationDisplayed}
                     />
                     <audio src="/type_sound.mp3" autoPlay>
                         Tu navegador no soporta el elemento audio.
@@ -43,7 +44,8 @@ const Animation = ({ setAnimation }) => {
 }
 
 Animation.propTypes = {
-    setAnimation: PropTypes.func.isRequired
+    setAnimation: PropTypes.func,
+    setAnimationDisplayed: PropTypes.func,
 }
 
 

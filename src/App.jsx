@@ -22,16 +22,6 @@ function App() {
 	}, [])
 
 	useEffect(() => {
-		if (animated && !animationDisplayed) {
-			const timer = setTimeout(() => {
-				setAnimationDisplayed(true)
-			}, 5500)
-
-			return () => clearTimeout(timer)
-		}
-	}, [animated, animationDisplayed])
-
-	useEffect(() => {
 		const processQueue = () => {
 			if (!queueRef.current.isEmpty() && !alerta) {
 				const nextAlert = queueRef.current.dequeue()
@@ -51,7 +41,7 @@ function App() {
 	return (
 		<>
 			{!animationDisplayed ? (
-				<Animation setAnimation={setAnimated} />
+				<Animation setAnimation={setAnimated} setAnimationDisplayed={setAnimationDisplayed} />
 			) : (
 				<>
 					{alerta && <Alerta mensaje={alerta.mensaje} tipo={alerta.tipo} onClose={() => setAlerta(null)} />}
