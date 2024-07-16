@@ -14,8 +14,8 @@ const Inicio = () => {
             <h1 dangerouslySetInnerHTML={{ __html: data.h1 }} />
             <h2 className="title">
                 {data.h2}
-                <Link to={`/${lang}/contacto`} className='linkInicio' 
-                    title={lang === 'es' ? 'Ir a la seccion de contacto' : 'Go to contact section' 
+                <Link to={`/${lang}/contacto`} className='linkInicio'
+                    title={lang === 'es' ? 'Ir a la seccion de contacto' : 'Go to contact section'
                     }>
                     {data.linkText} <HiOutlineExternalLink />
                 </Link>
