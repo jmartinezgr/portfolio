@@ -22,6 +22,14 @@ function App() {
 	}, [])
 
 	useEffect(() => {
+		if (animated) {
+			setTimeout(() => {
+				setAnimated(true)
+			}, 5000)
+		}
+	}, [animated])
+
+	useEffect(() => {
 		const processQueue = () => {
 			if (!queueRef.current.isEmpty() && !alerta) {
 				const nextAlert = queueRef.current.dequeue()
@@ -40,18 +48,16 @@ function App() {
 
 	return (
 		<>
-			{!animationDisplayed ? (
+			{!animationDisplayed && (
 				<Animation setAnimation={setAnimated} setAnimationDisplayed={setAnimationDisplayed} />
-			) : (
-				<>
-					{alerta && <Alerta mensaje={alerta.mensaje} tipo={alerta.tipo} onClose={() => setAlerta(null)} />}
-					<SocialIcons />
-					<MisRutas />
-					<Email alerta={showAlert} />
-					{/* Elemento para medir el rendimiento en vercel */}
-					<SpeedInsights />
-				</>
 			)}
+
+			{alerta && <Alerta mensaje={alerta.mensaje} tipo={alerta.tipo} onClose={() => setAlerta(null)} />}
+			<SocialIcons />
+			<MisRutas />
+			<Email alerta={showAlert} />
+
+			<SpeedInsights />
 		</>
 	)
 }

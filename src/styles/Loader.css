@@ -196,3 +196,17 @@
 .animate-delay-500 {
   animation-delay: 0.5s;
 }
+
+/* Agrega esto a tu archivo CSS */
+@keyframes slow-blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+
+.blink-slow {
+  animation: slow-blink 2s infinite;
+}
