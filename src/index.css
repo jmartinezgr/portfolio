@@ -102,7 +102,7 @@ header nav ul.menu li:nth-child(1){
 
 header nav ul.menu li:nth-child(5),
 header nav ul.menu li:nth-child(6) {
-    position: absolute; /* Posiciona estos elementos con respecto a su contenedor padre */
+    position: sticky; /* Posiciona estos elementos con respecto a su contenedor padre */
     bottom: 20px; /* Ajusta la distancia desde el borde inferior del contenedor padre */
 }
 
