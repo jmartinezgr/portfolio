@@ -96,16 +96,22 @@ header nav ul.menu li{
     padding: 1rem 0;
 }
 
-header nav ul.menu li:nth-child(5){
-    position: fixed;
-    bottom: 20px;
-    right: 115px;
+header nav ul.menu li:nth-child(1){
+    margin-top: .5rem;
 }
 
-header nav ul.menu li:nth-child(6){
-    position: fixed;
-    bottom: 20px;
-    right: 50px;
+header nav ul.menu li:nth-child(5),
+header nav ul.menu li:nth-child(6) {
+    position: absolute; /* Posiciona estos elementos con respecto a su contenedor padre */
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior del contenedor padre */
+}
+
+header nav ul.menu li:nth-child(5) {
+    right: 115px; /* Ajusta la posición horizontal del quinto elemento */
+}
+
+header nav ul.menu li:nth-child(6) {
+    right: 50px; /* Ajusta la posición horizontal del sexto elemento */
 }
 
 header nav ul.menu.open {
