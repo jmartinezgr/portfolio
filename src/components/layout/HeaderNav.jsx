@@ -1,13 +1,24 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../../hooks/useLanguage";
 import ToggleButton from '../ToogleButton';
 import { flushSync } from "react-dom";
-import { IoIosMenu } from "react-icons/io";
+import { IoIosMenu, IoIosClose } from "react-icons/io";
 
 const HeaderNav = () => {
     const lang = useLanguage();
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 980);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 980);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -41,7 +52,6 @@ const HeaderNav = () => {
         if (lang === 'es') language = 'en';
         else language = 'es';
 
-        // Guardar el idioma en el localStorage
         localStorage.setItem('lang', language);
 
         const currentPath = window.location.pathname;
@@ -53,16 +63,16 @@ const HeaderNav = () => {
 
     const click = (name) => {
         if (!document.startViewTransition) {
-            navigate('/' + lang + '/' + name)
-            console.log('navegando')
+            navigate('/' + lang + '/' + name);
         } else {
             document.startViewTransition(() => {
                 flushSync(() => {
-                    navigate('/' + lang + '/' + name)
-                })
-            })
+                    navigate('/' + lang + '/' + name);
+                });
+            });
         }
-    }
+        if (isMobile) setMenuOpen(false);
+    };
 
     return (
         <header>
@@ -71,7 +81,7 @@ const HeaderNav = () => {
                 <h3>Juan Martinez FULLSTACK DEV</h3>
             </div>
             <nav>
-                <ul>
+                <ul className={`${isMobile ? 'menu' : ''} ${menuOpen ? 'open' : ''}`}>
                     <li>
                         <NavLink to={`/${lang}/inicio`} onClick={() => click("inicio")}>{lang === 'es' ? 'Inicio' : 'Home'}</NavLink>
                     </li>
@@ -86,16 +96,19 @@ const HeaderNav = () => {
                     </li>
                     <li>
                         <button onClick={handleOnClick}>
-                            <img src={src} alt="Español" />
+                            <img src={src} alt="Idioma" />
                         </button>
                     </li>
                     <li>
                         <ToggleButton handleColor={handleColor} />
                     </li>
-                    <li className="sub__menu">
-                        <IoIosMenu />
-                    </li>
+                    {isMobile && (
+                        <li className="close-menu" onClick={() => setMenuOpen(false)}>
+                            <IoIosClose />
+                        </li>
+                    )}
                 </ul>
+                {isMobile && <IoIosMenu className="sub__menu" onClick={() => setMenuOpen(true)} />}
             </nav>
         </header>
     );
