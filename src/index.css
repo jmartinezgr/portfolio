@@ -92,6 +92,22 @@ header nav ul.menu {
     padding-top: 50px;
 }
 
+header nav ul.menu li{
+    padding: 1rem 0;
+}
+
+header nav ul.menu li:nth-child(5){
+    position: fixed;
+    bottom: 20px;
+    right: 115px;
+}
+
+header nav ul.menu li:nth-child(6){
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+}
+
 header nav ul.menu.open {
     transform: translateX(0);
 }
