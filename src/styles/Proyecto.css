@@ -3,7 +3,7 @@
 }
 
 .page-work .mask{
-    height: 300px;
+    max-height: 300px;
     overflow: hidden;
     box-shadow: 0px 0px 0px #ddd;
 }
