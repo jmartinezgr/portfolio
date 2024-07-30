@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLanguage } from "../../hooks/useLanguage";
 import ToggleButton from '../ToogleButton';
 import { flushSync } from "react-dom";
+import { IoIosMenu } from "react-icons/io";
 
 const HeaderNav = () => {
     const lang = useLanguage();
@@ -42,7 +43,7 @@ const HeaderNav = () => {
 
         // Guardar el idioma en el localStorage
         localStorage.setItem('lang', language);
-        
+
         const currentPath = window.location.pathname;
         const newPath = currentPath.replace(`/${lang}/`, `/${language}/`);
         navigate(newPath);
@@ -51,15 +52,15 @@ const HeaderNav = () => {
     const src = lang === 'en' ? '/español.png' : '/english.png';
 
     const click = (name) => {
-        if(!document.startViewTransition) {
-            navigate('/'+lang+'/' + name)
+        if (!document.startViewTransition) {
+            navigate('/' + lang + '/' + name)
             console.log('navegando')
-        }else{
-            document.startViewTransition(()=>{
-                flushSync(()=>{
-                    navigate('/'+lang+'/' + name)   
+        } else {
+            document.startViewTransition(() => {
+                flushSync(() => {
+                    navigate('/' + lang + '/' + name)
                 })
-            }) 
+            })
         }
     }
 
@@ -78,10 +79,10 @@ const HeaderNav = () => {
                         <NavLink to={`/${lang}/portafolio`} onClick={() => click("portafolio")}>{lang === 'es' ? 'Portafolio' : 'Portfolio'}</NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/${lang}/sobre-mi`} onClick={() =>click("sobre-mi")}>{lang === 'es' ? 'Sobre mi' : 'About me'}</NavLink>
+                        <NavLink to={`/${lang}/sobre-mi`} onClick={() => click("sobre-mi")}>{lang === 'es' ? 'Sobre mi' : 'About me'}</NavLink>
                     </li>
                     <li>
-                        <NavLink to={`/${lang}/contacto`} onClick={() =>click("contacto")}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
+                        <NavLink to={`/${lang}/contacto`} onClick={() => click("contacto")}>{lang === 'es' ? 'Contacto' : 'Contact'}</NavLink>
                     </li>
                     <li>
                         <button onClick={handleOnClick}>
@@ -90,6 +91,9 @@ const HeaderNav = () => {
                     </li>
                     <li>
                         <ToggleButton handleColor={handleColor} />
+                    </li>
+                    <li className="sub__menu">
+                        <IoIosMenu />
                     </li>
                 </ul>
             </nav>

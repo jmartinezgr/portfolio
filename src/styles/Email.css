@@ -29,3 +29,9 @@
 	background-color: var(--text-pcolor);
 	margin-bottom: 10px;
 }
+
+@media (max-width: 1100px) {
+	.email {
+		display: none;
+	}	
+}

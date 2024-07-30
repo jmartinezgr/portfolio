@@ -1,32 +1,55 @@
-import { useLanguage } from '../hooks/useLanguage';
-import { Link } from 'react-router-dom';
-import { HiOutlineExternalLink } from "react-icons/hi";
-import '../styles/Inicio.css';
-import ListadoProyectos from './Proyectos/ListadoProyectos';
-import { inicio } from '../assets/data/inicio';
+import { useLanguage } from '../hooks/useLanguage'
+import { inicio } from '../assets/data/inicio'
+import '../styles/inicio-mio.css'
+import TypeWriter from './layout/Typewriter'
+
+//Social Icons
+import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { PiInstagramLogoFill } from "react-icons/pi";
+
 
 const Inicio = () => {
-    const lang = useLanguage();
-    const data = inicio[lang];
+    const lang = useLanguage()
+    const data = inicio[lang]
 
     return (
-        <div className="home">
-            <h1 dangerouslySetInnerHTML={{ __html: data.h1 }} />
-            <h2 className="title">
-                {data.h2}
-                <Link to={`/${lang}/contacto`} className='linkInicio'
-                    title={lang === 'es' ? 'Ir a la seccion de contacto' : 'Go to contact section'
-                    }>
-                    {data.linkText} <HiOutlineExternalLink />
-                </Link>
-            </h2>
-            <section className="works">
-                <h2 className="heading">{data.projectsHeading}</h2>
-                <p>{data.projectsDescription}</p>
-                <ListadoProyectos limite={2} />
-            </section>
-        </div>
-    );
+        <section className='section home' id='home'>
+            <div className="container">
+                <div className="grid home_wrapper">
+                    <div className="home__body">
+                        <div className="info">
+                            <span className="home__subtitle">{data.welcome}</span>
+                            <h1 className="home__title">
+                                <span className='home__principal'>
+                                    I&apos;m <span className="home__name">Juan</span><br />
+                                </span>
+                                and a <TypeWriter words={["UI/UX Designer", "Developer", "Student"]}
+                                    writeSpeed={0.3}
+                                    eraseSpeed={0.3}
+                                    pauseBetween={1}
+                                />
+                            </h1>
+                            <p className="home__description">
+                                I&apos;m a Web Developer with academic experience in UI/UX Design.
+                                I have a passion for creating beautiful and functional websites.
+                            </p>
+
+                            <div className="social">
+                                <ul className="social__list">
+                                    <li className="social__item"><a href=""><FaGithub className='__icon' /></a></li>
+                                    <li className="social__item"><a href=""><FaTwitter className='__icon' /></a></li>
+                                    <li className="social__item"><a href=""><PiInstagramLogoFill className='__icon' /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" className="btn btn--primary">Download CV</a>
+                    </div>
+                    <img src="/me.png" alt="" className="home__image" />
+                </div>
+            </div>
+        </section>
+    )
 }
 
 export default Inicio;

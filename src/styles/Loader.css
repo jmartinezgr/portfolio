@@ -160,7 +160,7 @@
 
 .type-typer {
   overflow: hidden;
-  border-right: 1px solid white; /* Cambia el color aquí */
+  border-right: 1px solid var(--text-pcolor, #ffffff); /* Blanco como fallback */
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;

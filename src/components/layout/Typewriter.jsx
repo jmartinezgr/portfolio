@@ -15,7 +15,7 @@ function Typewriter({ words, writeSpeed = 0.7, eraseSpeed = 0.5, pauseBetween = 
                 } else {
                     setIsErasing(false);
                     setWordIndex((prev) => (prev + 1) % words.length);
-                    if (wordIndex === words.length - 1) {
+                    if (wordIndex === words.length - 1 && setAnimationDisplayed) {
                         setTimeout(() => setAnimationDisplayed(true), 50);
                         return
                     }
