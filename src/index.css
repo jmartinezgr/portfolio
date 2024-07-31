@@ -74,6 +74,10 @@ header nav ul {
     transition: transform 0.3s ease;
 }
 
+header nav ul li:nth-child(6){
+    margin-right: 0;
+}
+
 header nav ul.menu {
     transform: translateX(100%);
     position: fixed;
@@ -102,7 +106,8 @@ header nav ul.menu li:nth-child(1){
 
 header nav ul.menu li:nth-child(5),
 header nav ul.menu li:nth-child(6) {
-    position: fixed; /* Posiciona estos elementos con respecto a su contenedor padre */
+    position: fixed; 
+    /* Posiciona estos elementos con respecto a su contenedor padre */
     /* Ajusta la distancia desde el borde inferior del contenedor padre */
     top: calc(16rem);
 }
@@ -173,7 +178,6 @@ footer {
     min-height: 50px;
     text-align: center;
     font-size: 14px;
-    margin-top: 35px;
     padding-top: 45px;
     border-top: 3px solid var(--text-pcolor);
     background: var(--background-color);

@@ -62,6 +62,7 @@ section .home {
     align-items: center;
     grid-template-columns: 100%;
     gap: 0;
+    margin-bottom: 30px;
 }
 
 .container {
