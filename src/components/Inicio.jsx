@@ -1,6 +1,5 @@
 import { useLanguage } from '../hooks/useLanguage'
 import { inicio } from '../assets/data/inicio'
-import '../styles/inicio-mio.css'
 import TypeWriter from './layout/Typewriter'
 
 //Social Icons
@@ -8,6 +7,8 @@ import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
 
+//Estilos
+import '../styles/inicio.css'
 
 const Inicio = () => {
     const lang = useLanguage()
@@ -22,30 +23,29 @@ const Inicio = () => {
                             <span className="home__subtitle">{data.welcome}</span>
                             <h1 className="home__title">
                                 <span className='home__principal'>
-                                    I&apos;m <span className="home__name">Juan</span><br />
+                                    {data.i} <span className="home__name">Juan</span><br />
                                 </span>
-                                and a <TypeWriter words={["UI/UX Designer", "Developer", "Student"]}
+                                {data.and}<TypeWriter words={data.typer}
                                     writeSpeed={0.3}
                                     eraseSpeed={0.3}
                                     pauseBetween={1}
                                 />
                             </h1>
                             <p className="home__description">
-                                I&apos;m a Web Developer with academic experience in UI/UX Design.
-                                I have a passion for creating beautiful and functional websites.
+                                {data.desc}
                             </p>
 
                             <div className="social">
                                 <ul className="social__list">
-                                    <li className="social__item"><a href=""><FaGithub className='__icon' /></a></li>
-                                    <li className="social__item"><a href=""><FaTwitter className='__icon' /></a></li>
-                                    <li className="social__item"><a href=""><PiInstagramLogoFill className='__icon' /></a></li>
+                                    <li className="social__item"><a href="https://github.com/jmartinezgr" target='__blank'><FaGithub className='__icon' /></a></li>
+                                    <li className="social__item"><a href="https://github.com/jmartinezgr" target='__blank'><FaTwitter className='__icon' /></a></li>
+                                    <li className="social__item"><a href="https://github.com/jmartinezgr" target='__blank'><PiInstagramLogoFill className='__icon' /></a></li>
                                 </ul>
                             </div>
                         </div>
-                        <a href="#" className="btn btn--primary">Download CV</a>
+                        <a href="/cv.pdf" download="jmartinezgr_curriculum.pdf" className="btn btn--primary">{data.cv}</a>
                     </div>
-                    <img src="/me.png" alt="" className="home__image" />
+                    <img src="/me.png" alt="jmartinezgr image" className="home__image" />
                 </div>
             </div>
         </section>

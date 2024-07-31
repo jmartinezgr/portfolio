@@ -2,21 +2,19 @@
 export const inicio = {
     "es": {
         "welcome": "Bienvenido",
-        "h1": "¡Hola! Soy Juan José Martinez, un apasionado Desarrollador Web en Colombia. Ofrezco servicios de <strong>programación y diseño</strong> para todo tipo de proyectos web, así como soluciones de <strong>automatización</strong> para optimizar procesos y tareas.",
-        "h2": "Te ayudo a crear tu sitio o aplicación web, aumentar tu visibilidad en internet y mejorar la eficiencia de tus procesos.",
-        "linkText": "Contáctame",
-        "projectsHeading": "Algunos de mis proyectos",
-        "projectsDescription": "Estos son algunos de mis trabajos de desarrollo web",
-        "title": "Hi, It's Juan Jose",
-        "h3": "I'm a"
+        "i": "Soy",
+        "and": "y un ",
+        "typer": ["Diseñador UI/UX", "Desarrollador", "Estudiante"],
+        "desc": "Soy un desarrollador web con experiencia académica en diseño de UI/UX. Tengo una pasión por crear sitios web hermosos y funcionales.",
+        "cv": "Descargar CV"
     },
     "en": {
         "welcome": "Welcome",
-        "h1": "Hello! I am Juan José Martinez, a passionate Web Developer from Colombia. I offer <strong>programming and design</strong> services for all kinds of web projects, as well as <strong>automation</strong> solutions to optimize processes and tasks.",
-        "h2": "I help you create your website or web application, increase your visibility on the internet, and improve the efficiency of your processes.",
-        "linkText": "Contact me",
-        "projectsHeading": "Some of my projects",
-        "projectsDescription": "Here are some of my web development works"
+        "i": "I'm",
+        "and": "and a ",
+        "typer": ["UI/UX Designer", "Developer", "Student"],
+        "desc": "I'm a Web Developer with academic experience in UI/UX Design. I have a passion for creating beautiful and functional websites.",
+        "cv": "Download CV"
     }
     // Puedes agregar más idiomas aquí
 }

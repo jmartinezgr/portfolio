@@ -1,49 +1,214 @@
-.home {
+/* Estilos generales */
+:root {
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+
+    --fs-sm: 1rem;
+    --fs-md: 1.4rem;
+    --fs-lg: 1.8rem;
+    --fs-xl: 2.2rem;
+    --fs-xxl: clamp(var(--fs-lg), 5vw, 3.5rem);
+    --fs-heading: clamp(1.4rem, 4vw, 2.5rem);
+
+    --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    --header-height: 2rem;
+    --primary-color: #3498db;
+    --text-pcolor: #2c3e50;
+}
+
+section .home h1,
+section .home h2,
+section .home h3,
+section .home h4,
+section .home p,
+section .home ul {
     margin: 0;
-    background-color: var(--background-color);
-    color: var(--text-pcolor);
-    --a-color: #f5f5f5;
+    padding: 0;
 }
 
-.home h1 {
-    font-weight: 500;
-    font-size: 50px;
-    margin-bottom: 0;
-    margin-top: 20px;
+ul {
+    list-style: none;
 }
 
-.home strong {
-    color: var(--primary-color);
-}
-
-.home .title {
-    color: var(--text-scolor);
-    font-weight: 340;
-    line-height: 1.5;
-}
-
-.home .linkInicio {
-    margin: 0 0 0 10px;
-    color: var(--primary-color);
+a {
     text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
+}
+
+section .home img {
+    max-width: 60%;
+    display: block;
+    min-width: 15rem;
+    min-height: 15rem;
+    max-height: 60%;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(1px 1px 15px var(--primary-color));
+}
+
+section .home {
+    min-height: 1vh;
+    color: var(--text-pcolor);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-medium);
+    min-width: 100%;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
     align-items: center;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease;
+    grid-template-columns: 100%;
+    gap: 0;
+    margin-bottom: 30px;
 }
 
-.home .linkInicio svg {
+.container {
+    /* max-width: 1100px; */
+}
+
+.home__principal {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.section {
+    padding: 3rem 0 0 0;
+}
+
+.home__wraper {
+    min-height: calc(100vh);
+    padding: 5rem 0;
+}
+
+.home__subtitle {
+    display: block;
+    font-weight: var(--fw-bold);
+    color: var(--text-pcolor);
+    margin-bottom: .1rem;
+}
+
+.home__title {
+    font-size: var(--fs-heading);
+    margin-bottom: 1rem;
+    min-width: calc(var(--fs-heading) * 15);
+}
+
+.home .info {
+    min-width: calc(var(--fs-heading) * 11);
+}
+
+.home__name {
     color: var(--primary-color);
-    font-size: 20px;
-    margin-left: 5px;
 }
 
-.home .linkInicio:hover {
+.home .home__description {
+    margin-top: .5rem;
+    font-size: var(--fs-sm);
+    margin-bottom: 1rem;
+}
+
+.home__image {
+    justify-self: center;
+    order: -1; /* Muestra la imagen primero en móviles */
+}
+
+.social {
+    margin-top: 1rem;
+}
+
+.social__list {
+    display: flex;
+    column-gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.__icon {
+    color: var(--text-pcolor);
+    margin-top: 5px;
+    font-size: 1.2rem;
     color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
 }
 
-.home section p {
-    color: var(--text-scolor);
+.social__item:hover {
+    background-color: var(--primary-color);
+}
+
+.social__item:hover .__icon {
+    color: var(--background-color);
+}
+
+.social__link {
+    color: var(--text-pcolor);
+    font-size: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .5rem .8rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+    font-size: var(--fs-sm);
+}
+
+.btn svg {
+    margin: 3px 0px 0 5px;
+    font-size: var(--fs-sm);
+}
+
+.btn:hover{
+    background-color: #1d6697;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 900px) {
+    .home_wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-content: space-between; /* Hace que las columnas ocupen todo el espacio */
+    }
+
+    .container {
+        margin: 1rem 4rem;
+    }
+
+    section .home img {
+        max-width: 60%;
+        display: block;
+        min-width: 15rem;
+        max-height: 85%;
+        height: auto;
+        filter: drop-shadow(1px 1px 15px var(--primary-color));
+        margin-bottom: 0;
+    }
+
+    .home__image {
+        order: 1; /* Restablece el orden de la imagen */
+    }
+}
+
+@media (min-width: 1100px) {
+    .social {
+        display: none;
+    }
 }
