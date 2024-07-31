@@ -103,7 +103,8 @@ header nav ul.menu li:nth-child(1){
 header nav ul.menu li:nth-child(5),
 header nav ul.menu li:nth-child(6) {
     position: fixed; /* Posiciona estos elementos con respecto a su contenedor padre */
-    bottom: 20px; /* Ajusta la distancia desde el borde inferior del contenedor padre */
+    /* Ajusta la distancia desde el borde inferior del contenedor padre */
+    top: calc(16rem);
 }
 
 header nav ul.menu li:nth-child(5) {
