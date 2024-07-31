@@ -1,14 +1,14 @@
 import { useLanguage } from '../hooks/useLanguage'
 import { inicio } from '../assets/data/inicio'
 import TypeWriter from './layout/Typewriter'
+//Estilos
+import '../styles/inicio-mio.css'
+
 
 //Social Icons
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
-
-//Estilos
-import '../styles/inicio.css'
 
 const Inicio = () => {
     const lang = useLanguage()

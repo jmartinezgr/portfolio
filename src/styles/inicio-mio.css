@@ -65,10 +65,6 @@ section .home {
     margin-bottom: 30px;
 }
 
-.container {
-    /* max-width: 1100px; */
-}
-
 .home__principal {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
