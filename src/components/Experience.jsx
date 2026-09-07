@@ -1,19 +1,23 @@
-import { experience } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 import SectionLabel from "./SectionLabel";
 
 const Experience = () => {
+  const { t } = useLanguage();
+  const { experience } = t;
+
   return (
     <section id="experience" className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="reveal max-w-2xl">
-          <SectionLabel index="04" label="Experience" />
+          <SectionLabel index={experience.sectionIndex} label={experience.sectionLabel} />
           <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
-            Real systems, <em className="not-italic text-accent">real constraints.</em>
+            {experience.headingLead}
+            <em className="not-italic text-accent">{experience.headingEmphasis}</em>
           </h2>
         </div>
 
         <div className="reveal mt-12 space-y-0 border-l border-border">
-          {experience.map((item) => (
+          {experience.items.map((item) => (
             <div key={item.company} className="relative pb-10 pl-8 last:pb-0">
               <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
               <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">

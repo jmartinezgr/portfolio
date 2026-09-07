@@ -1,6 +1,9 @@
-import { profile, pipeline } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  const { profile, pipeline } = t;
+
   return (
     <section id="top" className="relative overflow-hidden pt-40 pb-24">
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black_10%,transparent_70%)]" />
@@ -23,7 +26,7 @@ const Hero = () => {
               href="#work"
               className="rounded-md bg-accent px-5 py-3 font-mono text-xs uppercase tracking-widest text-bg transition-opacity hover:opacity-90"
             >
-              View my work
+              {profile.ctaViewWork}
             </a>
             <a
               href={profile.github}
@@ -31,7 +34,7 @@ const Hero = () => {
               rel="noreferrer"
               className="rounded-md border border-border px-5 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-colors hover:border-accent"
             >
-              GitHub ↗
+              {profile.ctaGithub} ↗
             </a>
             <a
               href={profile.cv}
@@ -39,7 +42,7 @@ const Hero = () => {
               rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widest text-muted underline decoration-border underline-offset-4 transition-colors hover:text-ink"
             >
-              Download CV
+              {profile.ctaDownloadCv}
             </a>
           </div>
 
@@ -49,11 +52,9 @@ const Hero = () => {
         </div>
 
         <div className="reveal rounded-xl border border-border bg-surface/60 p-6" style={{ animationDelay: "120ms" }}>
-          <p className="font-mono text-xs uppercase tracking-widest text-muted">
-            Pipeline / abstract
-          </p>
+          <p className="font-mono text-xs uppercase tracking-widest text-muted">{pipeline.title}</p>
           <div className="mt-4 space-y-3">
-            {pipeline.map((step) => (
+            {pipeline.steps.map((step) => (
               <div
                 key={step.label}
                 className="flex items-center justify-between rounded-lg border border-border bg-bg/60 px-4 py-3"
@@ -65,7 +66,7 @@ const Hero = () => {
               </div>
             ))}
           </div>
-          <p className="mt-4 font-mono text-xs text-muted/70">Data in. Decisions out.</p>
+          <p className="mt-4 font-mono text-xs text-muted/70">{pipeline.footer}</p>
         </div>
       </div>
     </section>

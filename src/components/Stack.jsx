@@ -1,20 +1,24 @@
-import { stack } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 import SectionLabel from "./SectionLabel";
 
 const Stack = () => {
+  const { t } = useLanguage();
+  const { stack } = t;
+
   return (
     <section className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="reveal max-w-2xl">
-          <SectionLabel index="03" label="Stack" />
+          <SectionLabel index={stack.sectionIndex} label={stack.sectionLabel} />
           <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
-            The tools behind <em className="not-italic text-accent">the systems.</em>
+            {stack.headingLead}
+            <em className="not-italic text-accent">{stack.headingEmphasis}</em>
           </h2>
-          <p className="mt-4 text-muted">Tools I reach for, grouped by the kind of problem they solve.</p>
+          <p className="mt-4 text-muted">{stack.subheading}</p>
         </div>
 
         <div className="reveal mt-10 grid gap-6 sm:grid-cols-2">
-          {stack.map((group) => (
+          {stack.groups.map((group) => (
             <div key={group.group} className="rounded-xl border border-border p-6">
               <p className="font-mono text-xs uppercase tracking-widest text-muted">
                 {group.group}
@@ -32,7 +36,7 @@ const Stack = () => {
         </div>
 
         <p className="reveal mt-10 font-mono text-xs uppercase tracking-widest text-muted">
-          Less magic. More systems.
+          {stack.footerNote}
         </p>
       </div>
     </section>

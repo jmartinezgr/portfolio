@@ -1,4 +1,5 @@
 import { SpeedInsights } from '@vercel/speed-insights/react'
+import { LanguageProvider } from './i18n/LanguageContext'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Work from './components/Work'
@@ -11,7 +12,7 @@ import Footer from './components/Footer'
 
 function App() {
 	return (
-		<>
+		<LanguageProvider>
 			<Nav />
 			<main>
 				<Hero />
@@ -24,7 +25,7 @@ function App() {
 			</main>
 			<Footer />
 			<SpeedInsights />
-		</>
+		</LanguageProvider>
 	)
 }
 

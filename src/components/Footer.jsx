@@ -1,6 +1,9 @@
-import { profile } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  const { profile, footer } = t;
+
   return (
     <footer className="border-t border-border py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 sm:flex-row sm:items-center sm:justify-between">
@@ -13,13 +16,13 @@ const Footer = () => {
 
         <div className="flex flex-wrap items-center gap-6 font-mono text-xs uppercase tracking-widest text-muted">
           <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-ink">
-            GitHub ↗
+            {footer.githubLabel}
           </a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-ink">
-            LinkedIn ↗
+            {footer.linkedinLabel}
           </a>
           <a href={`mailto:${profile.email}`} className="hover:text-ink">
-            Email
+            {footer.emailLabel}
           </a>
           <span className="text-muted/60">© 2026 {profile.name}</span>
         </div>

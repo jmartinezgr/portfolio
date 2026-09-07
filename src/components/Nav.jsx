@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { profile, nav } from "../data/content";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
+  const { lang, toggle, t } = useLanguage();
+  const { profile, nav } = t;
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-border/80 bg-bg/80 backdrop-blur-md">
@@ -41,22 +43,40 @@ const Nav = () => {
           >
             LinkedIn
           </a>
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label="Switch language"
+            className="rounded border border-border px-2 py-1 font-mono text-xs uppercase tracking-widest text-muted transition-colors hover:border-accent hover:text-ink"
+          >
+            {lang === "en" ? "ES" : "EN"}
+          </button>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
-        >
-          <span
-            className={`h-px w-5 bg-ink transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
-          />
-          <span
-            className={`h-px w-5 bg-ink transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
-          />
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            onClick={toggle}
+            aria-label="Switch language"
+            className="rounded border border-border px-2 py-1 font-mono text-xs uppercase tracking-widest text-muted"
+          >
+            {lang === "en" ? "ES" : "EN"}
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="flex h-9 w-9 flex-col items-center justify-center gap-1.5"
+          >
+            <span
+              className={`h-px w-5 bg-ink transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+            />
+            <span
+              className={`h-px w-5 bg-ink transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
       </div>
 
       {open && (
