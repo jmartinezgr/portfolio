@@ -1,5 +1,5 @@
 {
-  "name": "08-proyecto-02",
+  "name": "jmartinezgr-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,16 +11,11 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.12",
-    "primeicons": "^7.0.0",
-    "primereact": "^10.6.6",
-    "prop-types": "^15.8.1",
-    "queue-fifo": "^0.2.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.2.1",
-    "react-router-dom": "^6.23.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react-swc": "^3.5.0",
@@ -28,6 +23,7 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "tailwindcss": "^4.3.3",
     "vite": "^5.2.0"
   }
 }

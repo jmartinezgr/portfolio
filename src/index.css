@@ -1,233 +1,54 @@
-/* Estilos básicos */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 
-* {
-    font-family: "Montserrat", sans-serif;
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg: #0b0a10;
+  --color-surface: #111017;
+  --color-border: #232130;
+  --color-ink: #f4f2f8;
+  --color-muted: #948fa3;
+  --color-accent: #a78bfa;
+  --color-accent-dim: #7c6bb0;
 }
 
-:root {
-    --background-color: #f5f5f5;
-    --text-pcolor: #000;
-    --text-scolor: #626161;
-    --primary-color: #007aff;
-    --box-shadow-color: rgba(0, 0, 0, 0.2);
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: var(--background-color);
-    overflow-x: hidden;
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
-#root {
-    width: 85%;
-    margin: 0 auto;
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* Estilos del header */
-header {
-    display: flex;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid var(--text-pcolor);
-    color: var(--text-pcolor);
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-header .logo {
-    flex-grow: 2;
-    display: flex;
-}
-
-header .logo span {
-    display: block;
-    font-size: 100px;
-    font-weight: bolder;
-}
-
-header .logo h3 {
-    display: block;
-    flex-basis: 40px;
-    margin-left: 10px;
-    font-weight: 280;
-    text-transform: uppercase;
-    font-size: 17px;
-}
-
-/* Estilos de la barra de navegación */
-header nav {
-    flex-grow: 1;
-}
-
-header nav ul {
-    height: 132px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    transition: transform 0.3s ease;
-}
-
-header nav ul li:nth-child(6){
-    margin-right: 0;
-}
-
-header nav ul.menu {
-    transform: translateX(100%);
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 14rem;
-    z-index: 500;
-    background-color: var(--background-color);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-top: 0;
-    padding-top: 50px;
-}
-
-header nav ul.menu li{
-    padding: 1rem 0;
-}
-
-header nav ul.menu li:nth-child(1){
-    margin-top: .5rem;
-}
-
-header nav ul.menu li:nth-child(5),
-header nav ul.menu li:nth-child(6) {
-    position: fixed; 
-    /* Posiciona estos elementos con respecto a su contenedor padre */
-    /* Ajusta la distancia desde el borde inferior del contenedor padre */
-    top: calc(16rem);
-}
-
-header nav ul.menu li:nth-child(5) {
-    right: 115px; /* Ajusta la posición horizontal del quinto elemento */
-}
-
-header nav ul.menu li:nth-child(6) {
-    right: 50px; /* Ajusta la posición horizontal del sexto elemento */
-}
-
-header nav ul.menu.open {
-    transform: translateX(0);
-}
-
-header nav ul li {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 17px;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: var(--text-pcolor);
-    text-decoration: none;
-    transition: all 300ms;
-    white-space: nowrap;
-}
-
-header nav ul li a:hover,
-header .active {
-    color: var(--primary-color);
-}
-
-/* Estilos para los botones de cambio de idioma */
-nav ul li button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* Estilos para las imágenes de las banderas */
-nav ul li button img {
-    width: 35px; /* Ajusta el tamaño de la imagen según sea necesario */
-    height: auto; /* Para hacer las imágenes redondas */ /* Sombra ligera */
-    transition: transform 0.3s ease; /* Transición suave */
-    padding: 5px 0 0 0;
-}
-
-/* Estilos cuando se hace hover sobre las imágenes */
-nav ul li button img:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
-}
-
-nav ul li button:focus {
-    outline: none;
-}
-
-/* Estilos del contenido principal */
-.content {
-    min-height: 70vh;
-}
-
-/* Estilos del footer */
-footer {
-    min-height: 50px;
-    text-align: center;
-    font-size: 14px;
-    padding-top: 45px;
-    border-top: 3px solid var(--text-pcolor);
-    background: var(--background-color);
-    line-height: 20px;
-    color: var(--text-scolor);
-}
-
-.heading {
-    font-size: 3rem;
-    font-weight: 500 !important;
-    color: var(--text-pcolor) !important;
-    margin-bottom: 0px;
-    margin-top: 10;
-}
-
-.page .heading {
-    font-weight: bold !important;
-    margin-top: 10px;
-}
-
-.sub__menu {
-    display: none;
-}
-
-.close-menu {
-    display: none;
-}
-
-@media (max-width: 980px) {
-    header .logo h3 {
-        display: none;
-    }
-
-    header .logo span {
-        font-size: 4rem;
-    }
-
-    .sub__menu {
-        display: block;
-        font-size: 2rem;
-        cursor: pointer;
-        margin-left: auto;
-    }
-
-    .close-menu {
-        display: block;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 2rem;
-        cursor: pointer;
-    }
+.reveal {
+  animation: fade-up 0.6s ease both;
 }
