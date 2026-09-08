@@ -79,19 +79,32 @@ export const en = {
       },
       {
         id: "02",
-        tags: "AUTOMATION · RPA · BACKEND",
-        title: "SAP Automation & RPA",
+        tags: "BACKEND · SCRAPING · HEXAGONAL ARCHITECTURE",
+        title: "RangeMerge",
         description:
-          "Automation systems for enterprise workflows involving SAP interfaces and repetitive operational processes.",
+          "A rental-alarm engine that merges every user's search criteria into the minimum number of scrapes per site, instead of one scrape per alarm — grouping alarms into shared mega-filters and matching results in memory.",
         context:
-          "Working across SAP UI5 interfaces, dynamic web elements, iframes and complex XPath.",
-        stats: [{ term: "Role", value: "Full Stack / RPA Developer" }],
-        flow: [
-          { label: "Browser UI", detail: "SAP UI5 interfaces" },
-          { label: "Automation", detail: "Selenium · XPath" },
-          { label: "Workflow", detail: "enterprise process" },
+          "Personal project, pre-release: the architecture and two scraper adapters (ciencuadras.com, metrocuadrado.com) are built and working locally, not deployed yet.",
+        stats: [
+          { term: "Architecture", value: "Hexagonal (ports & adapters)" },
+          { term: "Matcher", value: "O(1) discrete / O(log n) continuous" },
+          { term: "Status", value: "Pre-release" },
         ],
-        tech: ["Python", "Selenium", "SAP UI5", "RPA", "XPath"],
+        problem:
+          "N users' rental alarms, each with different filters, naively need one search per alarm — wasteful, and fast to get an IP blocked at any real scale.",
+        approach:
+          "Group alarms by (city, neighborhood, operation, type) — the real granularity a site's search supports — compute the enveloping price/area/rooms/bathrooms range per group, run one search per group, then match the superset against every exact alarm in memory with an indexed matcher.",
+        flow: [
+          { label: "Alarms", detail: "N users, N criteria" },
+          { label: "Merge", detail: "grouped into mega-filters" },
+          { label: "Scrape", detail: "1 search per group/provider" },
+          { label: "Match", detail: "indexed, in memory" },
+        ],
+        tech: ["Python", "Playwright", "FastAPI", "Hexagonal architecture", "Docker"],
+        links: [
+          { label: "Live demo", disabled: true, note: "Not deployed yet" },
+          { label: "GitHub ↗", href: "https://github.com/jmartinezgr/property-scrapper" },
+        ],
       },
       {
         id: "03",

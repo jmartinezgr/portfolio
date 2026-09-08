@@ -57,17 +57,27 @@ const ProjectInfo = ({ project, work }) => (
 
     {project.links && (
       <div className="mt-4 flex flex-wrap gap-4">
-        {project.links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            target="_blank"
-            rel="noreferrer"
-            className="font-mono text-xs uppercase tracking-widest text-accent underline decoration-accent/40 underline-offset-4 hover:text-ink"
-          >
-            {link.label}
-          </a>
-        ))}
+        {project.links.map((link) =>
+          link.disabled ? (
+            <span
+              key={link.label}
+              className="cursor-not-allowed font-mono text-xs uppercase tracking-widest text-muted/50 line-through decoration-muted/30"
+              title={link.note}
+            >
+              {link.label}
+            </span>
+          ) : (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono text-xs uppercase tracking-widest text-accent underline decoration-accent/40 underline-offset-4 hover:text-ink"
+            >
+              {link.label}
+            </a>
+          )
+        )}
       </div>
     )}
   </div>

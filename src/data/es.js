@@ -79,19 +79,32 @@ export const es = {
       },
       {
         id: "02",
-        tags: "AUTOMATIZACIÓN · RPA · BACKEND",
-        title: "Automatización SAP & RPA",
+        tags: "BACKEND · SCRAPING · ARQUITECTURA HEXAGONAL",
+        title: "RangeMerge",
         description:
-          "Sistemas de automatización para flujos empresariales que involucran interfaces SAP y procesos operativos repetitivos.",
+          "Un motor de alarmas de arriendo que fusiona los criterios de búsqueda de todos los usuarios en el mínimo número de barridos posible por sitio, en vez de un barrido por alarma — agrupando alarmas en mega-filtros compartidos y emparejando resultados en memoria.",
         context:
-          "Trabajo sobre interfaces SAP UI5, elementos web dinámicos, iframes y XPath complejo.",
-        stats: [{ term: "Rol", value: "Full Stack / RPA Developer" }],
-        flow: [
-          { label: "UI del navegador", detail: "interfaces SAP UI5" },
-          { label: "Automatización", detail: "Selenium · XPath" },
-          { label: "Flujo de trabajo", detail: "proceso empresarial" },
+          "Proyecto personal, aún sin desplegar: la arquitectura y dos adaptadores de scraping (ciencuadras.com, metrocuadrado.com) ya están construidos y funcionando en local.",
+        stats: [
+          { term: "Arquitectura", value: "Hexagonal (puertos y adaptadores)" },
+          { term: "Matcher", value: "O(1) discreto / O(log n) continuo" },
+          { term: "Estado", value: "Pre-lanzamiento" },
         ],
-        tech: ["Python", "Selenium", "SAP UI5", "RPA", "XPath"],
+        problem:
+          "Las alarmas de arriendo de N usuarios, cada una con filtros distintos, ingenuamente necesitan una búsqueda por alarma — un desperdicio, y rápido para que el sitio bloquee la IP a cualquier escala real.",
+        approach:
+          "Agrupar alarmas por (ciudad, barrio, operación, tipo) — la granularidad real que soporta la búsqueda de un sitio —, calcular el rango envolvente de precio/área/habitaciones/baños por grupo, ejecutar una sola búsqueda por grupo, y emparejar el superconjunto contra cada alarma exacta en memoria con un matcher indexado.",
+        flow: [
+          { label: "Alarmas", detail: "N usuarios, N criterios" },
+          { label: "Fusión", detail: "agrupadas en mega-filtros" },
+          { label: "Barrido", detail: "1 búsqueda por grupo/proveedor" },
+          { label: "Match", detail: "indexado, en memoria" },
+        ],
+        tech: ["Python", "Playwright", "FastAPI", "Arquitectura hexagonal", "Docker"],
+        links: [
+          { label: "Ver en vivo", disabled: true, note: "Aún no desplegado" },
+          { label: "GitHub ↗", href: "https://github.com/jmartinezgr/property-scrapper" },
+        ],
       },
       {
         id: "03",
