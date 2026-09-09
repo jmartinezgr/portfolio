@@ -71,6 +71,7 @@ export const en = {
           { label: "Gold", detail: "18 rules, pass/fail + severity" },
           { label: "Explore", detail: "dashboard, matrix, export" },
         ],
+        flowClosing: "Every rule, every invoice — explained.",
         tech: ["Python", "FastAPI", "Polars", "Delta Lake", "DuckDB", "PostgreSQL", "React", "TypeScript"],
         links: [
           { label: "View live ↗", href: "https://auditlake.jmartinezgr.com" },
@@ -100,6 +101,7 @@ export const en = {
           { label: "Scrape", detail: "1 search per group/provider" },
           { label: "Match", detail: "indexed, in memory" },
         ],
+        flowClosing: "N alarms, one search per group.",
         tech: ["Python", "Playwright", "FastAPI", "Hexagonal architecture", "Docker"],
         links: [
           { label: "Live demo", disabled: true, note: "Not deployed yet" },
@@ -121,6 +123,7 @@ export const en = {
           { label: "Parquet", detail: "columnar transform" },
           { label: "Cloud storage", detail: "processed output" },
         ],
+        flowClosing: "Raw CSV in. Queryable Parquet out.",
         tech: ["Python", "FastAPI", "Polars", "Parquet", "Azure Blob Storage", "Docker"],
       },
     ],

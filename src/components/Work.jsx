@@ -84,9 +84,9 @@ const ProjectInfo = ({ project, work }) => (
 );
 
 const ProjectFlow = ({ project, work }) => (
-  <div className="rounded-lg border border-border bg-bg/60 p-5">
+  <div className="flex h-full flex-col rounded-lg border border-border bg-bg/60 p-5">
     <p className="font-mono text-xs uppercase tracking-widest text-muted">{work.flowLabel}</p>
-    <div className="mt-4 flex flex-col items-center gap-2">
+    <div className="flex flex-1 flex-col items-center justify-center gap-2 py-4">
       {project.flow.map((step, i) => (
         <div key={step.label} className="w-full">
           <div className="rounded-md border border-border bg-surface px-4 py-3 text-center">
@@ -101,13 +101,18 @@ const ProjectFlow = ({ project, work }) => (
         </div>
       ))}
     </div>
+    {project.flowClosing && (
+      <p className="border-t border-border pt-4 text-center font-mono text-xs text-muted/70">
+        {project.flowClosing}
+      </p>
+    )}
   </div>
 );
 
 const ProjectCard = ({ project, work, reverse }) => (
   <article className="reveal rounded-xl border border-border bg-surface/40 p-6 sm:p-8">
     <div
-      className={`grid gap-8 lg:grid-cols-[1.1fr_0.9fr] ${reverse ? "lg:grid-cols-[0.9fr_1.1fr]" : ""}`}
+      className={`grid items-stretch gap-8 lg:grid-cols-[1.1fr_0.9fr] ${reverse ? "lg:grid-cols-[0.9fr_1.1fr]" : ""}`}
     >
       {reverse ? (
         <>
