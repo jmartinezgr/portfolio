@@ -50,29 +50,44 @@ export const en = {
     projects: [
       {
         id: "01",
-        tags: "DATA ENGINEERING · BACKEND · LAKEHOUSE",
+        tags: "DATA ENGINEERING · AI AGENTS · LAKEHOUSE",
         title: "AuditLake",
         description:
-          "A layered (bronze/silver/gold) data audit engine for retail invoicing, built lakehouse-style — ingests multi-item invoices and produces an explainable audit trail for every rule evaluated.",
+          "A layered (bronze/silver/gold) data audit engine for retail invoicing, built lakehouse-style, now with a conversational AI copilot on top — ingests multi-item invoices and produces an explainable audit trail for every rule evaluated.",
         context:
-          "Portfolio project: the retail domain is invented, but the pipeline shape and rule engine are modeled on real high-volume transactional-data auditing work.",
+          "Portfolio project: the retail domain is invented, but the pipeline shape and rule engine are modeled on real high-volume transactional-data auditing work. The copilot runs on a free, local LLM (Ollama) — the limitations of that small model are documented honestly, not hidden.",
         stats: [
           { term: "Rules", value: "18 built-in + custom" },
-          { term: "Tests", value: "97 (pure domain layer)" },
+          { term: "Tests", value: "97+ (pure domain layer)" },
           { term: "Pipeline", value: "Bronze → Silver → Gold" },
+          { term: "Copilot", value: "Local LLM · LangGraph · MCP" },
         ],
         problem:
-          "Reconciling high-volume invoice data against master catalogs and explaining why a record fails — not just that it does — without a Spark cluster.",
+          "Reconciling high-volume invoice data against master catalogs and explaining why a record fails — not just that it does — without a Spark cluster, or a chat layer that just makes up an answer.",
         approach:
-          "A medallion pipeline (bronze/silver/gold) on Delta Lake, queried directly with DuckDB, plus a rule engine that separates self-consistency checks from catalog-driven ones — and lets new rules be added from the UI with no redeploy.",
+          "A medallion pipeline (bronze/silver/gold) on Delta Lake, queried directly with DuckDB, with a rule engine that separates self-consistency checks from catalog-driven ones. On top, a LangGraph agent — with RAG over the rule docs via Qdrant, and the same tools also exposed over MCP — answers natural-language questions about rules and real audit results, every claim backed by a real call into the tested domain logic, never computed by the LLM itself.",
         flow: [
           { label: "Bronze", detail: "raw, untyped, full traceability" },
           { label: "Silver", detail: "typed + structurally validated" },
           { label: "Gold", detail: "18 rules, pass/fail + severity" },
-          { label: "Explore", detail: "dashboard, matrix, export" },
+          { label: "Explore", detail: "dashboard, matrix, copilot" },
         ],
-        flowClosing: "Every rule, every invoice — explained.",
-        tech: ["Python", "FastAPI", "Polars", "Delta Lake", "DuckDB", "PostgreSQL", "React", "TypeScript"],
+        flowClosing: "Every rule, every invoice, every answer — explained.",
+        tech: [
+          "Python",
+          "FastAPI",
+          "Polars",
+          "Delta Lake",
+          "DuckDB",
+          "PostgreSQL",
+          "React",
+          "TypeScript",
+          "LangGraph",
+          "LangChain",
+          "Ollama",
+          "Qdrant",
+          "MCP",
+        ],
         links: [
           { label: "View live ↗", href: "https://auditlake.jmartinezgr.com" },
           { label: "GitHub ↗", href: "https://github.com/jmartinezgr/retail-audit-platform" },

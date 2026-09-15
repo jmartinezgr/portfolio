@@ -50,29 +50,44 @@ export const es = {
     projects: [
       {
         id: "01",
-        tags: "INGENIERÍA DE DATOS · BACKEND · LAKEHOUSE",
+        tags: "INGENIERÍA DE DATOS · AGENTES DE IA · LAKEHOUSE",
         title: "AuditLake",
         description:
-          "Un motor de auditoría de datos por capas (bronze/silver/gold) para facturación retail, estilo lakehouse — procesa facturas multi-ítem y genera un rastro de auditoría explicable para cada regla evaluada.",
+          "Un motor de auditoría de datos por capas (bronze/silver/gold) para facturación retail, estilo lakehouse, ahora con un copiloto conversacional de IA encima — procesa facturas multi-ítem y genera un rastro de auditoría explicable para cada regla evaluada.",
         context:
-          "Proyecto de portafolio: el dominio retail es ficticio, pero la forma del pipeline y el motor de reglas están modelados sobre trabajo real de auditoría de datos transaccionales de alto volumen.",
+          "Proyecto de portafolio: el dominio retail es ficticio, pero la forma del pipeline y el motor de reglas están modelados sobre trabajo real de auditoría de datos transaccionales de alto volumen. El copiloto corre sobre un LLM local y gratuito (Ollama) — las limitaciones de ese modelo pequeño están documentadas con honestidad, no escondidas.",
         stats: [
           { term: "Reglas", value: "18 incluidas + personalizadas" },
-          { term: "Tests", value: "97 (capa de dominio puro)" },
+          { term: "Tests", value: "97+ (capa de dominio puro)" },
           { term: "Pipeline", value: "Bronze → Silver → Gold" },
+          { term: "Copiloto", value: "LLM local · LangGraph · MCP" },
         ],
         problem:
-          "Conciliar datos de facturación de alto volumen contra catálogos maestros y explicar por qué falla un registro — no solo que falló — sin un clúster de Spark.",
+          "Conciliar datos de facturación de alto volumen contra catálogos maestros y explicar por qué falla un registro — no solo que falló — sin un clúster de Spark, ni una capa de chat que se invente la respuesta.",
         approach:
-          "Un pipeline medallion (bronze/silver/gold) sobre Delta Lake, consultado directo con DuckDB, más un motor de reglas que separa las validaciones de auto-consistencia de las que dependen de catálogos — permitiendo agregar reglas nuevas desde la UI sin redeploy.",
+          "Un pipeline medallion (bronze/silver/gold) sobre Delta Lake, consultado directo con DuckDB, con un motor de reglas que separa las validaciones de auto-consistencia de las que dependen de catálogos. Encima, un agente LangGraph — con RAG sobre la documentación de reglas vía Qdrant, y las mismas tools expuestas también por MCP — responde preguntas en lenguaje natural sobre reglas y resultados reales de auditoría, con cada afirmación respaldada por una llamada real a la lógica de dominio ya probada, nunca calculada por el LLM mismo.",
         flow: [
           { label: "Bronze", detail: "crudo, sin tipar, trazabilidad total" },
           { label: "Silver", detail: "tipado + validado estructuralmente" },
           { label: "Gold", detail: "18 reglas, pasa/falla + severidad" },
-          { label: "Explorar", detail: "dashboard, matriz, exportar" },
+          { label: "Explorar", detail: "dashboard, matriz, copiloto" },
         ],
-        flowClosing: "Cada regla, cada factura — explicada.",
-        tech: ["Python", "FastAPI", "Polars", "Delta Lake", "DuckDB", "PostgreSQL", "React", "TypeScript"],
+        flowClosing: "Cada regla, cada factura, cada respuesta — explicada.",
+        tech: [
+          "Python",
+          "FastAPI",
+          "Polars",
+          "Delta Lake",
+          "DuckDB",
+          "PostgreSQL",
+          "React",
+          "TypeScript",
+          "LangGraph",
+          "LangChain",
+          "Ollama",
+          "Qdrant",
+          "MCP",
+        ],
         links: [
           { label: "Ver en vivo ↗", href: "https://auditlake.jmartinezgr.com" },
           { label: "GitHub ↗", href: "https://github.com/jmartinezgr/retail-audit-platform" },
